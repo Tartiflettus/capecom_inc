@@ -14,8 +14,12 @@ TEMPLATE = app c++14
 
 SOURCES += main.cpp\
         doublevitrage.cpp \
-    garage.cpp
+    garage.cpp \
+    Vehicule.cpp
 
 HEADERS  += doublevitrage.h \
     garage.h \
-    vue.h
+    vue.h \
+    Vehicule.hpp \
+    Voiture.hpp \
+    LesVoitures.hpp
