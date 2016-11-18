@@ -9,7 +9,8 @@ QT       += core gui
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = capecom_inc
-TEMPLATE = app c++14
+TEMPLATE = app
+CONFIG += c++14
 
 
 SOURCES += main.cpp\
