@@ -3,13 +3,19 @@
 
 #include <QWidget>
 
-class DoubleVitrage : public QWidget
+#include "vue.h"
+
+class DoubleVitrage : public QWidget, public Vue
 {
     Q_OBJECT
 
 public:
     DoubleVitrage(QWidget *parent = 0);
     ~DoubleVitrage();
+
+    virtual void maj(){
+        //TODO
+    }
 };
 
 #endif // DOUBLEVITRAGE_H
