@@ -13,6 +13,9 @@ TEMPLATE = app c++14
 
 
 SOURCES += main.cpp\
-        doublevitrage.cpp
+        doublevitrage.cpp \
+    garage.cpp
 
-HEADERS  += doublevitrage.h
+HEADERS  += doublevitrage.h \
+    garage.h \
+    vue.h
