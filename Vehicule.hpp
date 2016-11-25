@@ -19,11 +19,15 @@ Vehicule(int identifiant, int places, int plaque,
 		std::string mod);
 
 public:
-//fonctions de retour des champs Vehicule
-int identifiant() {return id;}
-int places() {return nbPlaces;}
-int plaque() {return plaqueImmatriculation;}
-std::string modele() {return modeleVehicule;}
+
+    //fonctions de retour des champs Vehicule
+    int identifiant() {return id;}
+    int places() {return nbPlaces;}
+    int plaque() {return plaqueImmatriculation;}
+    std::string modele() {return modeleVehicule;}
+
+private:
+    Vehicule();
 };
 
 #endif
