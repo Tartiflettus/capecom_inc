@@ -1,7 +1,7 @@
 #ifndef LESVEHICULES
 #define LESVEHICULES
 
-#include "LesVoitures.h"
+#include "LesVoitures.hpp"
 
 class LesVehicules{
 protected:
@@ -12,10 +12,10 @@ protected:
 public:
     LesVehicules():lesVoitures()/*, lesBus(), lesVelos()*/{}
 
-    void ajouter(Vehicule v);
+    void ajouter(Voiture v);
 
-    void supprimer(Vehicule v);
+    void supprimer(Voiture v);
 
-}
+};
 
 #endif // LESVEHICULES
