@@ -1,9 +1,12 @@
 #ifndef VOITURE
 #define VOITURE
 
+#include "Vehicule.hpp"
+
 class Voiture : public Vehicule {
-	public :
+public :
 	Voiture();
-}
+
+};
 
 #endif
