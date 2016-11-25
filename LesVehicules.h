@@ -16,6 +16,6 @@ public:
 
     void supprimer(Vehicule v);
 
-}
+};
 
 #endif // LESVEHICULES

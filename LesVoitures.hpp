@@ -20,7 +20,7 @@ class LesVoitures {
     void supprimer_voiture(Voiture v){
         lesVoitures.remove(v);
     }
-}
+};
 
 
 #endif
