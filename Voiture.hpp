@@ -4,6 +4,6 @@
 class Voiture : public Vehicule {
 	public :
 	Voiture();
-}
+};
 
 #endif
