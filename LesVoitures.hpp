@@ -6,11 +6,11 @@
 #include "Voiture.hpp"
 
 class LesVoitures {
-    protected :
+protected :
 
     std::list<Voiture> lesVoitures;
 
-    public :
+public :
 
     LesVoitures();
     void ajouter(const Voiture& v){
