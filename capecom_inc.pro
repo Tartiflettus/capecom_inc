@@ -16,11 +16,13 @@ CONFIG += c++14
 SOURCES += main.cpp\
         doublevitrage.cpp \
     garage.cpp \
-    Vehicule.cpp
+    Vehicule.cpp \
+    vueaccueil.cpp
 
 HEADERS  += doublevitrage.h \
     garage.h \
     vue.h \
     Vehicule.hpp \
     Voiture.hpp \
-    LesVoitures.hpp
+    LesVoitures.hpp \
+    vueaccueil.h
