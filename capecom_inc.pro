@@ -25,4 +25,5 @@ HEADERS  += doublevitrage.h \
     Vehicule.hpp \
     Voiture.hpp \
     LesVoitures.hpp \
-    LesVehicules.h
+    LesVehicules.h \
+    supprimervehicule.h
