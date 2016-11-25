@@ -3,6 +3,7 @@
 
 
 #include <list>
+#include <iostream>
 //#include "LesVehicules.hpp"
 
 class Vue;
@@ -23,12 +24,20 @@ private:
     void maj();
 
 public:
+
+    enum {ACCUEIL, AJOUTER_VEHICULE};
+
+
     Garage();
 
     void ajouter_vue(Vue& v){
         lesVues.push_back(&v);
     }
 
+    void setCasUtilisation(int c){
+        casUtilisation = c;
+        maj();
+    }
 
     int get_cas_utilisation() const{
         return casUtilisation;
@@ -36,6 +45,10 @@ public:
 
     int get_vue_actu() const{
         return vueActu;
+    }
+
+    void ajouterVehicule(){
+        std::cout<< "Ajout de véhicule\n";
     }
 
 };

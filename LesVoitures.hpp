@@ -13,11 +13,11 @@ class LesVoitures {
     public :
 
     LesVoitures();
-    void ajouter_voiture(Voiture v){
+    void ajouter(const Voiture& v){
         lesVoitures.push_back(v);
     }
 
-    void supprimer_voiture(Voiture v){
+    void supprimer(const Voiture& v){
         lesVoitures.remove(v);
     }
 };

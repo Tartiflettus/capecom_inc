@@ -8,6 +8,8 @@
 class DoubleVitrage : public QWidget, public Vue
 {
     Q_OBJECT
+private:
+    QWidget *vueActu;
 
 public:
     DoubleVitrage(QWidget *parent = 0);
