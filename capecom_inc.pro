@@ -19,7 +19,9 @@ SOURCES += main.cpp\
     Vehicule.cpp \
     vueaccueil.cpp \
     LesVehicules.cpp \
-    vueajoutervehicule.cpp
+    vueajoutervehicule.cpp \
+    vuesupprimervehicule.cpp
+
 
 
 HEADERS  += doublevitrage.h \
@@ -29,8 +31,9 @@ HEADERS  += doublevitrage.h \
     Voiture.hpp \
     LesVoitures.hpp \
     LesVehicules.h \
-    supprimervehicule.h \
     vueaccueil.h \
     LesVehicules.h \
-    vueajoutervehicule.h
+    vueajoutervehicule.h \
+    vuesupprimervehicule.h
+
 

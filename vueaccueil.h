@@ -11,7 +11,7 @@ class VueAccueil : public QWidget, public Vue
     Q_OBJECT
 private:
     QRadioButton *btnAdmin;
-    QPushButton *btnAjouterVehicule;
+    QPushButton *btnAjouterVehicule, *btnSupprimerVehicule;
 
 public:
     VueAccueil(QWidget *parent, Garage& g);
@@ -20,6 +20,7 @@ public:
 
 public slots:
     void ajouterVehicule();
+    void supprimerVehicule();
 };
 
 #endif // VUEACCUEIL_H
