@@ -2,9 +2,10 @@
 #include "garage.h"
 #include <QBoxLayout>
 
-VueAccueil::VueAccueil(QWidget *parent, Garage& g): QWidget(parent)
+#include "garage.h"
+
+VueAccueil::VueAccueil(QWidget *parent, Garage& g): QWidget(parent), Vue(g)
 {
-    garage = &g;
 
     QVBoxLayout *layoutFen = new QVBoxLayout(); //layout global
     QHBoxLayout *layoutActeurs = new QHBoxLayout();

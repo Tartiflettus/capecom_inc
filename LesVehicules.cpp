@@ -1,7 +1,7 @@
 #include "LesVehicules.h"
 
 
-void LesVehicules::ajouter(Voiture v){
+void LesVehicules::ajouter(const Voiture& v){
     lesVoitures.ajouter(v);
 }
 
@@ -15,7 +15,7 @@ void LesVehicules::ajouter(Velo v){
 }
 */
 
-void LesVehicules::supprimer(Voiture v){
+void LesVehicules::supprimer(const Voiture& v){
     lesVoitures.supprimer(v);
 }
 

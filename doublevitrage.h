@@ -3,10 +3,9 @@
 
 #include <QWidget>
 
-#include "vue.h"
 #include "garage.h"
 
-class DoubleVitrage : public QWidget, public Vue
+class DoubleVitrage : public QWidget
 {
     Q_OBJECT
 private:

@@ -4,7 +4,9 @@
 
 #include <list>
 #include <iostream>
-//#include "LesVehicules.hpp"
+#include "LesVehicules.h"
+
+class Voiture;
 
 class Vue;
 
@@ -40,13 +42,17 @@ public:
         std::cout<< "Ajout de véhicule\n";
     }
 
+    void ajouterVoiture(const Voiture& v){
+        vehicules.ajouter(v);
+    }
+
 private:
     std::list<Vue*> lesVues;
 
     casUt_t casUtilisation;
     vueUt_t vueActu;
 
-    //LesVehicules lesVehicules;
+    LesVehicules vehicules;
 
 
     //@brief avertir les vues du changement

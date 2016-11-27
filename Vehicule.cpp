@@ -1,8 +1,10 @@
 #include <string>
 #include "Vehicule.hpp"
 
-Vehicule::Vehicule(int identifiant, int places, int plaque, std::string mod) :
-    id(identifiant),
+int Vehicule::_idActu = 0;
+
+Vehicule::Vehicule(int places, const QString& plaque, const QString& mod) :
+    id(nextId()),
     nbPlaces(places),
     plaqueImmatriculation(plaque),
     modeleVehicule(mod)
@@ -10,3 +12,7 @@ Vehicule::Vehicule(int identifiant, int places, int plaque, std::string mod) :
 }
 
 
+
+int Vehicule::nextId(){
+    return _idActu++;
+}

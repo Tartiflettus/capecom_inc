@@ -2,6 +2,7 @@
 #define LESVEHICULES
 
 #include "LesVoitures.hpp"
+#include "Voiture.hpp"
 
 class LesVehicules{
 protected:
@@ -12,9 +13,9 @@ protected:
 public:
     LesVehicules():lesVoitures()/*, lesBus(), lesVelos()*/{}
 
-    void ajouter(Voiture v);
+    void ajouter(const Voiture& v);
 
-    void supprimer(Voiture v);
+    void supprimer(const Voiture& v);
 
 };
 

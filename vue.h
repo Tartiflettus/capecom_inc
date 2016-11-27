@@ -10,6 +10,10 @@ class Vue
 protected:
     Garage* garage;
 public:
+    Vue(Garage& g){
+        garage = &g;
+    }
+
     virtual void maj() = 0;
 };
 

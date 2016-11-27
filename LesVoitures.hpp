@@ -12,7 +12,8 @@ protected :
 
 public :
 
-    LesVoitures();
+    LesVoitures(){};
+
     void ajouter(const Voiture& v){
         lesVoitures.push_back(v);
     }

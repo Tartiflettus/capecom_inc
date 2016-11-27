@@ -18,7 +18,8 @@ SOURCES += main.cpp\
     garage.cpp \
     Vehicule.cpp \
     vueaccueil.cpp \
-    LesVehicules.cpp
+    LesVehicules.cpp \
+    vueajoutervehicule.cpp
 
 
 HEADERS  += doublevitrage.h \
@@ -30,5 +31,6 @@ HEADERS  += doublevitrage.h \
     LesVehicules.h \
     supprimervehicule.h \
     vueaccueil.h \
-    LesVehicules.h
+    LesVehicules.h \
+    vueajoutervehicule.h
 
