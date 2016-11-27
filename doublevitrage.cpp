@@ -3,9 +3,11 @@
 #include "vueaccueil.h"
 
 DoubleVitrage::DoubleVitrage(QWidget *parent)
-    : QWidget(parent), vueActu(new VueAccueil(this))
+    : QWidget(parent)
 {
     this->setGeometry(50, 50, 500, 500);
+
+    vueActu = new VueAccueil(this, garage);
 }
 
 DoubleVitrage::~DoubleVitrage()
