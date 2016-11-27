@@ -5,11 +5,7 @@
 
 class Voiture : public Vehicule {
 public :
-	Voiture();
-<<<<<<< HEAD
-};
-
-=======
+    Voiture();
 
     bool operator==(const Voiture& v){
         return v.id == id
@@ -19,5 +15,5 @@ public :
     }
 };
 
->>>>>>> e702ab8e6b98dff54c1dbfd06db59cc2c071f583
+
 #endif
