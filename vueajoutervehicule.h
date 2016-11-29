@@ -2,7 +2,7 @@
 #define VUEAJOUTERVEHICULE_H
 
 
-class vueajoutervehicule
+class vueAjouterVehicule : public Vue
 {
 public:
     vueajoutervehicule();
