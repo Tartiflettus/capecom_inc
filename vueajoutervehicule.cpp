@@ -32,7 +32,7 @@ VueAjouterVehicule::VueAjouterVehicule(Garage& g, QWidget* parent): QWidget(pare
 void VueAjouterVehicule::ajouter(){
     Voiture v(lineNbPlaces->text().toInt(), lineImmatriculation->text(), lineModele->text());
 
-    //garage->ajouterVoiture(v);
+    garage->ajouterVoiture(v);
 }
 
 
