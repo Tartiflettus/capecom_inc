@@ -16,13 +16,17 @@ class Garage
 
 public:
 
-    enum casUt_t{ACCUEIL, AJOUTER_VEHICULE, SUPPRIMER_VEHICULE};
+    enum casUt_t{ACCUEIL, AJOUTER_VEHICULE, SUPPRIMER_VEHICULE, nb_cas};
     enum vueUt_t{};
 
     Garage();
 
     void ajouterVue(Vue& v){
         lesVues.push_back(&v);
+    }
+
+    void supprimerVue(Vue* v){
+        lesVues.remove(v);
     }
 
     void setCasUtilisation(casUt_t c){

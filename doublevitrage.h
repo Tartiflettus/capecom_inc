@@ -4,8 +4,16 @@
 #include <QWidget>
 
 #include "garage.h"
+#include "vue.h"
+#include "vueaccueil.h"
+#include "vueajoutervehicule.h"
+#include "vuesupprimervehicule.h"
 
-class DoubleVitrage : public QWidget
+#include <map>
+
+
+
+class DoubleVitrage : public QWidget, public Vue
 {
     Q_OBJECT
 private:
@@ -13,13 +21,14 @@ private:
 
     Garage garage;
 
+
+
 public:
     DoubleVitrage(QWidget *parent = 0);
     ~DoubleVitrage();
 
-    virtual void maj(){
-        //TODO
-    }
+    virtual void maj();
+
 };
 
 #endif // DOUBLEVITRAGE_H

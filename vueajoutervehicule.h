@@ -23,6 +23,8 @@ private:
 public:
     VueAjouterVehicule(Garage& g, QWidget* parent=nullptr);
 
+    virtual void maj();
+
 public slots:
     void ajouter();
 };

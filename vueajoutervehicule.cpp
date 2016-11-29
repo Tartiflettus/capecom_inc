@@ -36,3 +36,8 @@ void VueAjouterVehicule::ajouter(){
 }
 
 
+
+void VueAjouterVehicule::maj(){
+
+}
+

@@ -3,7 +3,7 @@
 #include "garage.h"
 #include <QBoxLayout>
 
-VueSupprimerVehicule::VueSupprimerVehicule(QWidget *parent, Garage& g): QWidget(parent), Vue(g)
+VueSupprimerVehicule::VueSupprimerVehicule(Garage& g, QWidget *parent): QWidget(parent), Vue(g)
 {
 
     QVBoxLayout *layoutFen = new QVBoxLayout(); //layout global

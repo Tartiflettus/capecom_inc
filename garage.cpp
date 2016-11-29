@@ -4,7 +4,7 @@
 
 Garage::Garage()
 {
-
+ casUtilisation = ACCUEIL;
 }
 
 
