@@ -16,6 +16,7 @@ public :
 
     void ajouter(const Voiture& v){
         lesVoitures.push_back(v);
+        std::cout<< "voiture ajoutée\n";
     }
 
     void supprimer(const Voiture& v){

@@ -27,6 +27,8 @@ VueAjouterVehicule::VueAjouterVehicule(Garage& g, QWidget* parent): QWidget(pare
 
     setLayout(layoutVue);
 
+    QObject::connect(btnConfirmer, SIGNAL(clicked()), this, SLOT(ajouter()));
+
     garage->ajouterVue(*this);
 }
 
