@@ -49,11 +49,16 @@ public:
 
     void ajouterVoiture(const Voiture& v){
         vehicules.ajouter(v);
+        std::cout<< "voiture ajoutée\n";
+
         maj();
     }
 
     void ajouterVelo(const Velo& v){
+
         vehicules.ajouter(v);
+        std::cout<< "vélo ajoutée\n";
+
     }
 
 private:

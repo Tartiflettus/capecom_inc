@@ -16,8 +16,6 @@ Vehicule::Vehicule(int places) :
 {
 }
 
-
-
 int Vehicule::nextId(){
     return _idActu++;
 }
