@@ -4,6 +4,7 @@
 #include <QHBoxLayout>
 
 #include "Voiture.hpp"
+#include "velo.h"
 
 
 VueAjouterVehicule::VueAjouterVehicule(Garage& g, QWidget* parent): QWidget(parent), Vue(g)
@@ -12,7 +13,9 @@ VueAjouterVehicule::VueAjouterVehicule(Garage& g, QWidget* parent): QWidget(pare
     QHBoxLayout* layoutVehicule = new QHBoxLayout();
 
     btnVoiture = new QRadioButton("voiture");
+    btnVelo = new QRadioButton("Vélo");
     layoutVehicule->addWidget(btnVoiture);
+    layoutVehicule->addWidget(btnVelo);
 
     lineImmatriculation = new QLineEdit();
     lineModele = new QLineEdit();
@@ -30,7 +33,14 @@ VueAjouterVehicule::VueAjouterVehicule(Garage& g, QWidget* parent): QWidget(pare
 
 
 void VueAjouterVehicule::ajouter(){
-    Voiture v(lineNbPlaces->text().toInt(), lineImmatriculation->text(), lineModele->text());
+    if(btnVoiture->isChecked()){
+        Voiture v(lineNbPlaces->text().toInt(), lineImmatriculation->text(), lineModele->text());
 
-    garage->ajouterVoiture(v);
+        garage->ajouterVoiture(v);
+    }else if(btnVelo->isChecked()){
+        Velo v(lineNbPlaces->text().toInt());
+
+        garage->ajouterVelo(v);
+    }
+
 }

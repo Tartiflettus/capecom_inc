@@ -3,11 +3,11 @@
 
 #include "velo.h"
 
-class LesVelos : {
+class LesVelos {
 protected:
-    std::list<Velos> lesVelos;
+    std::list<Velo> lesVelos;
 public:
-    lesVelos() {};
+    LesVelos() {};
 
     void ajouter(const Velo& v){
          lesVelos.push_back(v);

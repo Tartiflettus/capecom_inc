@@ -7,6 +7,7 @@
 #include "LesVehicules.h"
 
 class Voiture;
+class Velo;
 
 class Vue;
 
@@ -45,6 +46,10 @@ public:
     void ajouterVoiture(const Voiture& v){
         vehicules.ajouter(v);
         //std::cout<< "ajouter voiture\n";
+    }
+
+    void ajouterVelo(const Velo& v){
+        vehicules.ajouter(v);
     }
 
 private:
