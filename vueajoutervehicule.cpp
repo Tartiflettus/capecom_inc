@@ -25,6 +25,8 @@ VueAjouterVehicule::VueAjouterVehicule(Garage& g, QWidget* parent): QWidget(pare
     layoutVue->addRow("nombre de places", lineNbPlaces);
     layoutVue->addRow(btnConfirmer);
 
+    setLayout(layoutVue);
+
     garage->ajouterVue(*this);
 }
 
@@ -38,6 +40,6 @@ void VueAjouterVehicule::ajouter(){
 
 
 void VueAjouterVehicule::maj(){
-
+    std::cout<< "maj de ajouter véhicule\n";
 }
 

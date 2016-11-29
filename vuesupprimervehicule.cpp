@@ -14,6 +14,7 @@ VueSupprimerVehicule::VueSupprimerVehicule(Garage& g, QWidget *parent): QWidget(
     txtarea = new QLineEdit();
 
     layoutSuppr->addWidget(btnSupprimerVehicule);
+    layoutSuppr->addWidget(txtarea);
 
     this->setLayout(layoutFen);
 
@@ -23,7 +24,7 @@ VueSupprimerVehicule::VueSupprimerVehicule(Garage& g, QWidget *parent): QWidget(
 
 
 void VueSupprimerVehicule::supprimerVehicule(){
-    garage->setCasUtilisation(Garage::SUPPRIMER_VEHICULE);
+    std::cout<< "suppression d'un véhicule\n";
 }
 
 
