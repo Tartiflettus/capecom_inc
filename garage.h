@@ -49,7 +49,7 @@ public:
 
     void ajouterVoiture(const Voiture& v){
         vehicules.ajouter(v);
-        //std::cout<< "ajouter voiture\n";
+        maj();
     }
 
     void ajouterVelo(const Velo& v){

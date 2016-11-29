@@ -9,6 +9,7 @@
 
 class VueAjouterVehicule : public QWidget, public Vue
 {
+    Q_OBJECT
 private:
     QRadioButton* btnVoiture;
     QRadioButton* btnVelo;
