@@ -4,11 +4,12 @@
 #include "Vehicule.hpp"
 
 class Velo : public Vehicule{
-private:
+public:
     Velo(int places):
-        Vehicule(places){
-
+        Vehicule(places)
+    {
     }
+
 };
 
 #endif // VELO_H

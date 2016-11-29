@@ -18,8 +18,8 @@ protected:
 /// @brief constructeur prennant un id, nb_places, plaque et modele
 Vehicule(int places, const QString& imm,
         const QString& mod);
-//constructeur pour vélo prenant le nombre de places
-Vehicule(int nbPlaces);
+/// @brief constructeur pour vélo prenant le nombre de places
+Vehicule(int places);
 
 public:
 
@@ -28,6 +28,10 @@ public:
     int places() {return nbPlaces;}
     QString plaque() {return plaqueImmatriculation;}
     QString modele() {return modeleVehicule;}
+
+    bool operator == (const Vehicule& v){
+        return v.id == id;
+    }
 
 private:
     Vehicule();
