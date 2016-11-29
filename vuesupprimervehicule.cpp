@@ -3,7 +3,7 @@
 #include "garage.h"
 #include <QBoxLayout>
 
-VueSupprimerVehicule::VueSupprimerVehicule(QWidget *parent, Garage& g): QWidget(parent), Vue(g)
+VueSupprimerVehicule::VueSupprimerVehicule(Garage& g, QWidget *parent): QWidget(parent), Vue(g)
 {
 
     QVBoxLayout *layoutFen = new QVBoxLayout(); //layout global
@@ -22,11 +22,8 @@ VueSupprimerVehicule::VueSupprimerVehicule(QWidget *parent, Garage& g): QWidget(
 }
 
 
-void VueSupprimerVehicule::supprimerVehicule(){
-    garage->setCasUtilisation(Garage::SUPPRIMER_VEHICULE);
-}
 
 
-void VueSupprimerVehicule::maj(){
-    std::cout<< "maj de vue supprvehicule\n";
+void VueSupprimerVehicule::supprimer(){
+    //to do
 }

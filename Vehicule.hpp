@@ -22,10 +22,10 @@ Vehicule(int places, const QString& imm,
 public:
 
     //fonctions de retour des champs Vehicule
-    int identifiant() {return id;}
-    int places() {return nbPlaces;}
-    QString plaque() {return plaqueImmatriculation;}
-    QString modele() {return modeleVehicule;}
+    int identifiant() const {return id;}
+    int places() const {return nbPlaces;}
+    QString plaque() const {return plaqueImmatriculation;}
+    QString modele() const {return modeleVehicule;}
 
 private:
     Vehicule();
