@@ -31,6 +31,8 @@ VueAjouterVehicule::VueAjouterVehicule(Garage& g, QWidget* parent): QWidget(pare
     setLayout(layoutVue);
 
     QObject::connect(btnConfirmer, SIGNAL(clicked()), this, SLOT(ajouter()));
+    QObject::connect(btnVelo, SIGNAL(clicked()), this, SLOT(casVelo()));
+    QObject::connect(btnVoiture, SIGNAL(clicked()), this, SLOT(casVehicule()));
 
     garage->ajouterVue(*this);
 }
@@ -49,6 +51,15 @@ void VueAjouterVehicule::ajouter(){
 
 }
 
+void VueAjouterVehicule::casVelo(){
+    lineImmatriculation->setEnabled(false);
+    lineModele->setEnabled(false);
+}
+
+void VueAjouterVehicule::casVehicule(){
+    lineImmatriculation->setEnabled(true);
+    lineModele->setEnabled(true);
+}
 
 void VueAjouterVehicule::maj(){
     std::cout<< "maj de ajouter véhicule\n";

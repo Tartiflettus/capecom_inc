@@ -26,6 +26,8 @@ public:
 
 public slots:
     void ajouter();
+    void casVelo();
+    void casVehicule();
 };
 
 #endif // VUEAJOUTERVEHICULE_H
