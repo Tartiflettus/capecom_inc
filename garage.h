@@ -4,52 +4,61 @@
 
 #include <list>
 #include <iostream>
-//#include "LesVehicules.hpp"
+#include "LesVehicules.h"
+
+class Voiture;
 
 class Vue;
 
 
 class Garage
 {
-private:
-    std::list<Vue*> lesVues;
-
-    int casUtilisation;
-    int vueActu;
-
-    //LesVehicules lesVehicules;
-
-
-    //@brief avertir les vues du changement
-    void maj();
 
 public:
 
-    enum {ACCUEIL, AJOUTER_VEHICULE};
-
+    enum casUt_t{ACCUEIL, AJOUTER_VEHICULE, SUPPRIMER_VEHICULE};
+    enum vueUt_t{};
 
     Garage();
 
-    void ajouter_vue(Vue& v){
+    void ajouterVue(Vue& v){
         lesVues.push_back(&v);
     }
 
-    void setCasUtilisation(int c){
+    void setCasUtilisation(casUt_t c){
         casUtilisation = c;
         maj();
     }
 
-    int get_cas_utilisation() const{
+    casUt_t getCasUtilisation() const{
         return casUtilisation;
     }
 
-    int get_vue_actu() const{
+    vueUt_t getVueActu() const{
         return vueActu;
     }
 
     void ajouterVehicule(){
         std::cout<< "Ajout de véhicule\n";
     }
+
+    void ajouterVoiture(const Voiture& v){
+        vehicules.ajouter(v);
+        //std::cout<< "ajouter voiture\n";
+    }
+
+private:
+    std::list<Vue*> lesVues;
+
+    casUt_t casUtilisation;
+    vueUt_t vueActu;
+
+    LesVehicules vehicules;
+
+
+    //@brief avertir les vues du changement
+    void maj();
+
 
 };
 
