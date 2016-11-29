@@ -18,6 +18,8 @@ protected:
 /// @brief constructeur prennant un id, nb_places, plaque et modele
 Vehicule(int places, const QString& imm,
         const QString& mod);
+//constructeur pour vélo prenant le nombre de places
+Vehicule(int nbPlaces);
 
 public:
 

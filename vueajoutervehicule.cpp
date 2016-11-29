@@ -1,11 +1,4 @@
 #include "vueajoutervehicule.h"
-<<<<<<< HEAD
-
-vueajoutervehicule::vueajoutervehicule()
-{
-
-}
-=======
 #include "garage.h"
 #include <QFormLayout>
 #include <QHBoxLayout>
@@ -41,6 +34,3 @@ void VueAjouterVehicule::ajouter(){
 
     garage->ajouterVoiture(v);
 }
-
-
->>>>>>> 45f754159d76922a9f0e60b0847986f5db25d367

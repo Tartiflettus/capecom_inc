@@ -30,11 +30,8 @@ HEADERS  += doublevitrage.h \
     Vehicule.hpp \
     Voiture.hpp \
     LesVoitures.hpp \
-<<<<<<< HEAD
-    vueajoutervehicule.h\
-=======
-    LesVehicules.h \
->>>>>>> 45f754159d76922a9f0e60b0847986f5db25d367
+    velo.h \
+    lesvelos.h\
     vueaccueil.h \
     LesVehicules.h \
     vueajoutervehicule.h \
