@@ -2,7 +2,7 @@
 #define VUE_H
 
 
-class Garage;
+#include "garage.h"
 
 
 class Vue
@@ -12,6 +12,14 @@ protected:
 public:
     Vue(Garage& g){
         garage = &g;
+    }
+
+    Vue(){
+        garage = nullptr;
+    }
+
+    ~Vue(){
+        garage->supprimerVue(this);
     }
 
     virtual void maj() = 0;

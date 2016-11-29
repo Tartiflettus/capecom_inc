@@ -15,7 +15,7 @@ private:
     QLineEdit *txtarea;
 
 public:
-    VueSupprimerVehicule(QWidget *parent, Garage& g);
+    VueSupprimerVehicule(Garage& g, QWidget *parent = 0 );
 
     virtual void maj();
 

@@ -43,4 +43,12 @@ void VueAjouterVehicule::ajouter(){
         garage->ajouterVelo(v);
     }
 
+<<<<<<< HEAD
 }
+=======
+
+void VueAjouterVehicule::maj(){
+
+}
+
+>>>>>>> a323a4ff314413963fc48b3e86a4b8f253729d27
