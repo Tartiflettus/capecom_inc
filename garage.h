@@ -7,15 +7,14 @@
 #include <iostream>
 #include "LesVehicules.h"
 #include "leslocations.h"
-#include "plagehoraire.h"
-#include "location.h"
+
+
+
 
 class Voiture;
 class Velo;
 class Bus;
 class Vue;
-class PlageHoraire;
-
 
 class Garage
 {
@@ -87,9 +86,10 @@ private:
 
     LesVehicules vehicules;
     LesLocations lesLocations;
-    Location location;
 
-    PlageHoraire plage;
+    Location location_actu;
+    PlageHoraire plage_actu;
+    Client client_actu;
 
     //@brief avertir les vues du changement
     void maj();
