@@ -1,4 +1,3 @@
-
 #include "vuesupprimervehicule.h"
 #include "garage.h"
 #include <QBoxLayout>
@@ -14,6 +13,7 @@ VueSupprimerVehicule::VueSupprimerVehicule(Garage& g, QWidget *parent): QWidget(
     txtarea = new QLineEdit();
 
     layoutSuppr->addWidget(btnSupprimerVehicule);
+    layoutSuppr->addWidget(txtarea);
 
     this->setLayout(layoutFen);
 
@@ -22,6 +22,12 @@ VueSupprimerVehicule::VueSupprimerVehicule(Garage& g, QWidget *parent): QWidget(
 }
 
 
+<<<<<<< HEAD
+=======
+void VueSupprimerVehicule::supprimerVehicule(){
+    std::cout<< "suppression d'un véhicule\n";
+}
+>>>>>>> 093095ccdd6ac17b2f7b024ac093037d072b1a98
 
 
 void VueSupprimerVehicule::supprimer(){

@@ -23,17 +23,18 @@ SOURCES += main.cpp\
     vuesupprimervehicule.cpp
 
 
-
 HEADERS  += doublevitrage.h \
     garage.h \
     vue.h \
     Vehicule.hpp \
     Voiture.hpp \
     LesVoitures.hpp \
-    LesVehicules.h \
     vueaccueil.h \
     LesVehicules.h \
     vueajoutervehicule.h \
-    vuesupprimervehicule.h
+    vuesupprimervehicule.h \
+    lesvelos.h \
+    velo.h
+
 
 

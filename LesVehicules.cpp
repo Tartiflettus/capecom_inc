@@ -9,11 +9,11 @@ void LesVehicules::ajouter(const Voiture& v){
 void LesVehicules::ajouter(Bus v){
     lesBus.ajouter(v);
 }
-
-void LesVehicules::ajouter(Velo v){
+*/
+void LesVehicules::ajouter(const Velo& v){
     lesVelos.ajouter(v);
 }
-*/
+
 
 void LesVehicules::supprimer(const Voiture& v){
     lesVoitures.supprimer(v);

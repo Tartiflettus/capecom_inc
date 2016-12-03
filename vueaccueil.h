@@ -14,7 +14,11 @@ private:
     QPushButton *btnAjouterVehicule, *btnSupprimerVehicule;
 
 public:
+<<<<<<< HEAD
     VueAccueil(Garage& g, QWidget *parent);
+=======
+    VueAccueil(Garage& g, QWidget * parent = nullptr);
+>>>>>>> 093095ccdd6ac17b2f7b024ac093037d072b1a98
 
     virtual void maj();
 
