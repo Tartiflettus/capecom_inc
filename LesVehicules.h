@@ -5,15 +5,17 @@
 #include "Voiture.hpp"
 #include "lesvelos.h"
 #include "velo.h"
+#include "lesbus.h"
+#include "bus.h"
 
 class LesVehicules{
 protected:
     LesVoitures lesVoitures;
-    //LesBus lesBus;
+    LesBus lesBus;
     LesVelos lesVelos;
 
 public:
-    LesVehicules():lesVoitures(), /*lesBus(),*/ lesVelos(){}
+    LesVehicules():lesVoitures(), lesBus(), lesVelos(){}
     /*fonctions voitures*/
     void ajouter(const Voiture& v);
 
@@ -23,6 +25,11 @@ public:
     void ajouter(const Velo& v);
 
     void supprimer(const Velo& v);
+
+    /*fonctions bus*/
+    void ajouter(const Bus& b);
+
+    void supprimer(const Bus& b);
 
 };
 

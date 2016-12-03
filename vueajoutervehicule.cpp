@@ -5,6 +5,7 @@
 
 #include "Voiture.hpp"
 #include "velo.h"
+#include "bus.h"
 
 
 VueAjouterVehicule::VueAjouterVehicule(Garage& g, QWidget* parent): QWidget(parent), Vue(g)
@@ -13,9 +14,12 @@ VueAjouterVehicule::VueAjouterVehicule(Garage& g, QWidget* parent): QWidget(pare
     QHBoxLayout* layoutVehicule = new QHBoxLayout();
 
     btnVoiture = new QRadioButton("voiture");
-    btnVelo = new QRadioButton("Vélo");
+    btnVelo = new QRadioButton("vélo");
+    btnBus = new QRadioButton("bus");
     layoutVehicule->addWidget(btnVoiture);
     layoutVehicule->addWidget(btnVelo);
+    layoutVehicule->addWidget(btnBus);
+
 
     lineImmatriculation = new QLineEdit();
     lineModele = new QLineEdit();
@@ -33,6 +37,8 @@ VueAjouterVehicule::VueAjouterVehicule(Garage& g, QWidget* parent): QWidget(pare
     QObject::connect(btnConfirmer, SIGNAL(clicked()), this, SLOT(ajouter()));
     QObject::connect(btnVelo, SIGNAL(clicked()), this, SLOT(casVelo()));
     QObject::connect(btnVoiture, SIGNAL(clicked()), this, SLOT(casVehicule()));
+    QObject::connect(btnBus, SIGNAL(clicked()), this, SLOT(casVehicule()));
+
 
     garage->ajouterVue(*this);
 }
@@ -47,6 +53,8 @@ void VueAjouterVehicule::ajouter(){
         Velo v(lineNbPlaces->text().toInt());
 
         garage->ajouterVelo(v);
+    }else if(btnBus->isChecked()){
+        Bus v(lineNbPlaces->text().toInt(), lineImmatriculation->text(), lineModele->text());
     }
 
 }

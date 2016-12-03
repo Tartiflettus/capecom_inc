@@ -34,7 +34,14 @@ HEADERS  += doublevitrage.h \
     vueajoutervehicule.h \
     vuesupprimervehicule.h \
     lesvelos.h \
-    velo.h
+    velo.h \
+    bus.h \
+    lesbus.h \
+    humain.h \
+    client.h \
+    location.h \
+    plagehoraire.h \
+    leslocations.h
 
 
 

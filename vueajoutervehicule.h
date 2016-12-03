@@ -13,6 +13,7 @@ class VueAjouterVehicule : public QWidget, public Vue
 private:
     QRadioButton* btnVoiture;
     QRadioButton* btnVelo;
+    QRadioButton* btnBus;
     QLineEdit* lineImmatriculation;
     QLineEdit* lineModele;
     QLineEdit* lineNbPlaces;
