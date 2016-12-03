@@ -12,12 +12,12 @@ public :
 
     LesBus(){};
 
-    void ajouter(const Bus& v){
-        lesBus.push_back(v);
+    void ajouter(const Bus& b){
+        lesBus.push_back(b);
     }
 
-    void supprimer(const Bus& v){
-        lesBus.remove(v);
+    void supprimer(const Bus& b){
+        lesBus.remove(b);
     }
 };
 

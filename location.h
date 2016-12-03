@@ -10,6 +10,7 @@ protected:
     PlageHoraire plage;
     Client client;
     Vehicule v;
+
     /// @brief constructeur de location prenant une plage horaire, un client, une véhicule
     Location(PlageHoraire plage, Client client, Vehicule v);
 
