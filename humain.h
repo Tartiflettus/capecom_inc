@@ -14,12 +14,11 @@ protected:
     Humain (const QString& nom, const QString& prenom, const QString& adresse);
 
 public:
-    QString nom() {return nom;}
-    QString prenom() {return prenom;}
-    QString adresse() {return adresse;}
+    QString getNom() {return nom;}
+    QString getPrenom() {return prenom;}
+    QString getAdresse() {return adresse;}
 
-private:
-    Humain();
+    Humain(){}
 };
 
 #endif // HUMAIN_H

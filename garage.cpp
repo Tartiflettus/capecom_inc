@@ -1,5 +1,4 @@
 #include "garage.h"
-
 #include "vue.h"
 
 Garage::Garage()

@@ -9,9 +9,9 @@ class Vehicule {
 
 protected:
 
-	/// @brief identifiant unique d'un véhicule
-	int id;
-	int nbPlaces;
+    /// @brief identifiant unique d'un véhicule
+    int id;
+    int nbPlaces;
     QString plaqueImmatriculation;
     QString modeleVehicule;
 
@@ -22,7 +22,7 @@ Vehicule(int places, const QString& imm,
 Vehicule(int places);
 
 public:
-
+    Vehicule(){}
     //fonctions de retour des champs Vehicule
     int identifiant() {return id;}
     int places() {return nbPlaces;}
@@ -34,7 +34,6 @@ public:
     }
 
 private:
-    Vehicule();
 
     static int _idActu;
     static int nextId();

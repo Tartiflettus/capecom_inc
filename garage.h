@@ -1,20 +1,24 @@
 #ifndef GARAGE_H
 #define GARAGE_H
 
-
+#include <stdio.h>
+#include <time.h>
 #include <list>
 #include <iostream>
 #include "LesVehicules.h"
+#include "leslocations.h"
+#include "plagehoraire.h"
+#include "location.h"
 
 class Voiture;
 class Velo;
-
+class Bus;
 class Vue;
+class PlageHoraire;
 
 
 class Garage
 {
-
 public:
 
     enum casUt_t{ACCUEIL, AJOUTER_VEHICULE, SUPPRIMER_VEHICULE, nb_cas};
@@ -65,6 +69,16 @@ public:
         maj();
     }
 
+    void ajouterLocation(const Location& loc){
+        lesLocations.ajouter(loc);
+        std::cout<< "location ajoutée\n";
+        maj();
+    }
+
+    void setPlageHoraire(const int& annee, const int& mois, const int& jour, const int& heure, const int& min){
+        plage.setDate(annee, mois, jour, heure,  min);
+    }
+
 private:
     std::list<Vue*> lesVues;
 
@@ -72,7 +86,10 @@ private:
     vueUt_t vueActu;
 
     LesVehicules vehicules;
+    LesLocations lesLocations;
+    Location location;
 
+    PlageHoraire plage;
 
     //@brief avertir les vues du changement
     void maj();

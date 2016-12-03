@@ -17,7 +17,7 @@ public :
     }
 
     void supprimer(const Location& l){
-        lesBus.remove(l);
+        lesLocations.remove(l);
     }
 
 };
