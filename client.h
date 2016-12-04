@@ -4,8 +4,9 @@
 #include <QString>
 #include "humain.h"
 
-class Client : class Humain{
+class Client : public Humain{
 public:
+    Client(){}
     Client(const QString& nom, const QString& prenom,const QString& adresse):
         Humain(nom, prenom, adresse)
     {

@@ -40,8 +40,8 @@ HEADERS  += doublevitrage.h \
     humain.h \
     client.h \
     location.h \
-    plagehoraire.h \
-    leslocations.h
+    leslocations.h \
+    plagehoraire.h
 
 
 

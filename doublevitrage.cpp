@@ -7,14 +7,10 @@ DoubleVitrage::DoubleVitrage(QWidget *parent): QWidget(parent)
     Vue::garage = &(DoubleVitrage::garage);
     this->setGeometry(50, 50, 500, 500);
 
-/*<<<<<<< HEAD
-    vueActu = new VueAccueil(garage, this);
-=======*/
     vueActu = nullptr;
     maj();
 
     garage.ajouterVue(*this);
-//>>>>>>> 093095ccdd6ac17b2f7b024ac093037d072b1a98
 }
 
 DoubleVitrage::~DoubleVitrage()
