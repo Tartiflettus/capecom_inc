@@ -37,7 +37,7 @@ void DoubleVitrage::maj(){
     vueActu = mapCasUt[garage.getCasUtilisation()];
     vueActu->setParent(this);
     vueActu->show();
-    std::cout<< "Le cas d'utilisation a changé\n";
+    //std::cout<< "Le cas d'utilisation a changé\n";
 }
 
 
