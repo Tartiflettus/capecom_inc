@@ -8,12 +8,24 @@
 #include <QPushButton>
 #include <QLineEdit>
 #include <QLabel>
-#include <QFormLayout>
+#include <QRadioButton>
 
 
 class VueAjouterLocation : public QWidget, public Vue
 {
     Q_OBJECT
+private:
+    enum {VOITURE, BUS, VELO, nb_types};
+    enum {DEBUT, FIN};
+
+    QLineEdit *annee[2];
+    QLineEdit *mois[2];
+    QLineEdit *jour[2];
+
+
+    QLabel *labels[nb_types];
+    QRadioButton *buttons[nb_types];
+
 public:
     VueAjouterLocation(Garage &g, QWidget *parent = 0);
 

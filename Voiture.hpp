@@ -1,5 +1,5 @@
-#ifndef VOITURE
-#define VOITURE
+#ifndef VOITURE_HPP
+#define VOITURE_HPP
 
 #include "Vehicule.hpp"
 
