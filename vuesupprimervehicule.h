@@ -2,7 +2,6 @@
 #define SUPPRIMERVEHICULE
 
 #include "vue.h"
-
 #include <QWidget>
 #include <QLineEdit>
 #include <QPushButton>

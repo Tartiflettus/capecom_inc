@@ -20,6 +20,16 @@ public :
         lesLocations.remove(l);
     }
 
+    using iterator=std::list<Location>::iterator;
+
+    iterator begin(){
+        return lesLocations.begin();
+    }
+
+    iterator end(){
+        return lesLocations.end();
+    }
+
 };
 
 #endif // LESLOCATIONS_H

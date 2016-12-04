@@ -1,11 +1,9 @@
 #include "vuesupprimervehicule.h"
 #include "garage.h"
 #include <QBoxLayout>
-#include <QDebug>
 
 VueSupprimerVehicule::VueSupprimerVehicule(Garage& g, QWidget *parent): QWidget(parent), Vue(g)
 {
-
     QVBoxLayout *layoutFen = new QVBoxLayout(); //layout global
     QVBoxLayout *layoutSuppr = new QVBoxLayout();
     layoutFen->addLayout(layoutSuppr);
@@ -24,8 +22,8 @@ VueSupprimerVehicule::VueSupprimerVehicule(Garage& g, QWidget *parent): QWidget(
 
 
 void VueSupprimerVehicule::supprimer(){
-    qDebug()<< "suppression d'un vehicule\n";
     garage->supprimerVehicule(txtarea->text().toInt());
+    garage->setCasUtilisation(Garage::ACCUEIL);
 }
 
 void VueSupprimerVehicule::maj(){

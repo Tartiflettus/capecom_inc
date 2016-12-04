@@ -24,6 +24,10 @@ public:
     {
     }
 
+    int identifiant(){
+        return id;
+    }
+
     bool operator == (const Location& loc){
         return loc.id == id;
     }

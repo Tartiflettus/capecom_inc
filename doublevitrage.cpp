@@ -26,6 +26,7 @@ void DoubleVitrage::maj(){
         new VueAccueil(garage),
         new VueAjouterVehicule(garage),
         new VueSupprimerVehicule(garage),
+        new VueSupprimerLocation(garage),
         new VueAjouterLocation(garage)
     };
 
