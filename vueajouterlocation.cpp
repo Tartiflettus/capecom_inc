@@ -37,6 +37,10 @@ VueAjouterLocation::VueAjouterLocation(Garage& g, QWidget *parent) : QWidget(par
         layoutTypes->addWidget(buttons[i]);
     }
 
+    QObject::connect(buttons[VOITURE], SIGNAL(clicked()), this, SLOT(typeToVoiture()));
+    QObject::connect(buttons[BUS], SIGNAL(clicked()), this, SLOT(typeToBus()));
+    QObject::connect(buttons[VELO], SIGNAL(clicked()), this, SLOT(typeToVelo()));
+
     layoutModeles = new QHBoxLayout();
     layoutGlob->addLayout(layoutModeles);
 
@@ -100,6 +104,23 @@ void VueAjouterLocation::confirmer(){
     garage->ajouterLocation(l);
     garage->setCasUtilisation(Garage::ACCUEIL);
 }
+
+
+void VueAjouterLocation::typeToVoiture(){
+    VueAjouterLocation::typeActu=VOITURE;
+    VueAjouterLocation::maj();
+}
+
+void VueAjouterLocation::typeToBus(){
+    VueAjouterLocation::typeActu=BUS;
+    VueAjouterLocation::maj();
+}
+
+void VueAjouterLocation::typeToVelo(){
+    VueAjouterLocation::typeActu=VELO;
+    VueAjouterLocation::maj();
+}
+
 
 void VueAjouterLocation::selectionnerVehicule(int index){
     indexSelection = index;

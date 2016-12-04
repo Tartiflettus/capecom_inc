@@ -48,7 +48,8 @@ HEADERS  += doublevitrage.h \
     leslocations.h \
     plagehoraire.h \
     vuesupprimerlocation.h \
-    vueajouterlocation.h
+    vueajouterlocation.h \
+    vueaffichervehicules.h
 
 
 

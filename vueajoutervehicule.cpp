@@ -55,6 +55,7 @@ void VueAjouterVehicule::ajouter(){
         garage->ajouterVelo(v);
     }else if(btnBus->isChecked()){
         Bus v(lineNbPlaces->text().toInt(), lineImmatriculation->text(), lineModele->text());
+        garage->ajouterBus(v);
     }
 
     garage->setCasUtilisation(Garage::ACCUEIL);

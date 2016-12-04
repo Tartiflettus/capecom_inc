@@ -51,6 +51,9 @@ public:
 public slots:
     void quitter();
     void confirmer();
+    void typeToVoiture();
+    void typeToBus();
+    void typeToVelo();
     void selectionnerVehicule(int index);
 };
 
