@@ -52,36 +52,30 @@ public:
     }
 
     void ajouterVehicule(){
-        std::cout<< "Ajout de véhicule\n";
     }
 
     void ajouterVoiture(const Voiture& v){
         vehicules.ajouter(v);
-        std::cout<< "voiture ajoutée\n";
         maj();
     }
 
     void ajouterVelo(const Velo& v){
         vehicules.ajouter(v);
-        std::cout<< "vélo ajouté\n";
         maj();
     }
 
     void ajouterBus(const Bus& b){
         vehicules.ajouter(b);
-        std::cout<< "bus ajouté\n";
         maj();
     }
 
     void supprimerVehicule(const int id){
         vehicules.supprimer(id);
-        std::cout<< "véhicule supprimé\n";
         maj();
     }
 
     void ajouterLocation(const Location& loc){
         lesLocations.ajouter(loc);
-        std::cout<< "location ajoutée\n";
         maj();
     }
 

@@ -54,5 +54,4 @@ void VueAccueil::ajouterLocation(){
 }
 
 void VueAccueil::maj(){
-    std::cout<< "maj de vue accueil\n";
 }

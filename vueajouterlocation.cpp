@@ -56,18 +56,18 @@ VueAjouterLocation::VueAjouterLocation(Garage& g, QWidget *parent) : QWidget(par
 
 void VueAjouterLocation::getVehicules(){
     switch (typeActu) {
-    case VOITURE:
-        remplirModeles(garage->beginVoiture(), garage->endVoiture());
-        break;
-    case BUS:
-        remplirModeles(garage->beginBus(), garage->endBus());
-        break;
-    case VELO:
-        remplirModeles(garage->beginVelo(), garage->endVelo());
-        break;
-    default:
-        assert(false);
-        break;
+        case VOITURE:
+            remplirModeles(garage->beginVoiture(), garage->endVoiture());
+            break;
+        case BUS:
+            remplirModeles(garage->beginBus(), garage->endBus());
+            break;
+        case VELO:
+            remplirModeles(garage->beginVelo(), garage->endVelo());
+            break;
+        default:
+            assert(false);
+            break;
     }
 }
 
