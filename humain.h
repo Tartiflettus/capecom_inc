@@ -19,6 +19,11 @@ public:
     QString getAdresse() {return adresse;}
 
     Humain(){}
+
+
+private:
+    static int _idActu;
+    static int nextId();
 };
 
 #endif // HUMAIN_H

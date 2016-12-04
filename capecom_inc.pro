@@ -23,7 +23,8 @@ SOURCES += main.cpp\
     vuesupprimervehicule.cpp \
     location.cpp \
     vuesupprimerlocation.cpp \
-    vueajouterlocation.cpp
+    vueajouterlocation.cpp \
+    humain.cpp
 
 
 

@@ -40,13 +40,18 @@ VueAjouterLocation::VueAjouterLocation(Garage& g, QWidget *parent) : QWidget(par
     layoutModeles = new QHBoxLayout();
     layoutGlob->addLayout(layoutModeles);
 
+    mapper = new QSignalMapper(this);
     getVehicules();
 
 
     QPushButton *btnQuitter = new QPushButton("revenir");
+    QPushButton *btnConfirmer = new QPushButton("confirmer");
     layoutGlob->addWidget(btnQuitter);
+    layoutGlob->addWidget(btnConfirmer);
+
 
     QObject::connect(btnQuitter, SIGNAL(clicked()), this, SLOT(quitter()));
+    QObject::connect(btnConfirmer, SIGNAL(clicked()), this, SLOT(confirmer()));
 
     setLayout(layoutGlob);
     garage->ajouterVue(*this);
@@ -59,6 +64,7 @@ void VueAjouterLocation::getVehicules(){
         delete elem;
     }
     modeles.clear();
+    vehicules.clear();
     switch (typeActu) {
         case VOITURE:
             remplirModeles(garage->beginVoiture(), garage->endVoiture());
@@ -86,4 +92,15 @@ void VueAjouterLocation::maj(){
 
 void VueAjouterLocation::quitter(){
     garage->setCasUtilisation(Garage::ACCUEIL);
+}
+
+void VueAjouterLocation::confirmer(){
+    Location l(PlageHoraire(annee[DEBUT]->text().toInt(), mois[DEBUT]->text().toInt(), jour[DEBUT]->text().toInt()),
+               Client(), *(vehicules[indexSelection]));
+    garage->ajouterLocation(l);
+}
+
+void VueAjouterLocation::selectionnerVehicule(int index){
+    indexSelection = index;
+    std::cout<< "index : "<< indexSelection<< "\n";
 }
