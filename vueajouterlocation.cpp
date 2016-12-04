@@ -55,6 +55,10 @@ VueAjouterLocation::VueAjouterLocation(Garage& g, QWidget *parent) : QWidget(par
 
 
 void VueAjouterLocation::getVehicules(){
+    for(auto& elem : modeles){
+        delete elem;
+    }
+    modeles.clear();
     switch (typeActu) {
         case VOITURE:
             remplirModeles(garage->beginVoiture(), garage->endVoiture());
@@ -75,7 +79,7 @@ void VueAjouterLocation::getVehicules(){
 
 
 void VueAjouterLocation::maj(){
-
+    getVehicules();
 }
 
 
