@@ -9,7 +9,7 @@ protected:
     struct tm plage;
 
 public:
-    PlageHoraire(const int annee, const int mois, const int jour, const int heure, const int min){
+    PlageHoraire(const int annee, const int mois, const int jour, const int heure=0, const int min=0){
         plage.tm_year = annee;
         plage.tm_mon = mois;
         plage.tm_mday = jour;
@@ -21,7 +21,7 @@ public:
     int jour() {return plage.tm_mday;}
     int heure() {return plage.tm_hour;}
     int min() {return plage.tm_min;}
-    void setDate(int annee, int mois, int jour, int heure, int min){
+    void setDate(int annee, int mois, int jour, int heure=0, int min=0){
         plage.tm_year = annee;
         plage.tm_mon = mois;
         plage.tm_mday = jour;

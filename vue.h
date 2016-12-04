@@ -19,7 +19,7 @@ public:
     }
 
     ~Vue(){
-        garage->supprimerVue(this);
+        //garage->supprimerVue(this);
     }
 
     virtual void maj() = 0;

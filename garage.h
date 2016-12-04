@@ -21,7 +21,9 @@ class Garage
 {
 public:
 
-    enum casUt_t{ACCUEIL, AJOUTER_VEHICULE, SUPPRIMER_VEHICULE, SUPPRIMER_LOCATION, nb_cas};
+
+    enum casUt_t{ACCUEIL, AJOUTER_VEHICULE, SUPPRIMER_VEHICULE, SUPPRIMER_LOCATION, AJOUTER_LOCATION, nb_cas};
+
     enum vueUt_t{};
 
     Garage();
