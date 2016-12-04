@@ -7,18 +7,36 @@
 class Humain {
 protected:
 
+    int id;
     QString nom;
     QString prenom;
     QString adresse;
 
-    Humain (const QString& nom, const QString& prenom, const QString& adresse);
-
 public:
+
+    Humain (const QString& n, const QString& p, const QString& a):
+        id(nextId()), nom(n), prenom(p), adresse(a)
+    {
+    }
+
+    Humain(): id(nextId())
+    {
+    }
+
+    int identifiant(){
+        return id;
+    }
+
     QString getNom() {return nom;}
     QString getPrenom() {return prenom;}
     QString getAdresse() {return adresse;}
 
-    Humain(){}
+private:
+
+    static int _idActu;
+    static int nextId(){
+        return _idActu++;
+    }
 };
 
 #endif // HUMAIN_H

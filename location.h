@@ -24,8 +24,16 @@ public:
     {
     }
 
-    int identifiant(){
+    int identifiant() const{
         return id;
+    }
+
+    PlageHoraire getPlage() const{
+        return plage;
+    }
+
+    QString getModele()const{
+        return vehicule->modele();
     }
 
     bool operator == (const Location& loc){

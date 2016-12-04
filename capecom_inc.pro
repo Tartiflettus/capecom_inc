@@ -23,7 +23,10 @@ SOURCES += main.cpp\
     vuesupprimervehicule.cpp \
     location.cpp \
     vuesupprimerlocation.cpp \
-    vueajouterlocation.cpp
+    vueajouterlocation.cpp \
+    leslocations.cpp \
+    humain.cpp \
+    vueafficherlocationclient.cpp
 
 
 
@@ -47,7 +50,8 @@ HEADERS  += doublevitrage.h \
     leslocations.h \
     plagehoraire.h \
     vuesupprimerlocation.h \
-    vueajouterlocation.h
+    vueajouterlocation.h \
+    vueafficherlocationclient.h
 
 
 

@@ -2,6 +2,8 @@
 #define LESLOCATIONS_H
 
 #include "location.h"
+#include <list>
+#include <vector>
 
 class LesLocations {
 protected:
@@ -29,6 +31,8 @@ public :
     iterator end(){
         return lesLocations.end();
     }
+
+    std::vector<Location> locationClient(int id);
 
 };
 

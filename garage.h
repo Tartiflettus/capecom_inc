@@ -5,6 +5,7 @@
 #include <time.h>
 #include <list>
 #include <iostream>
+#include <vector>
 #include "LesVehicules.h"
 #include "leslocations.h"
 
@@ -92,6 +93,17 @@ public:
         plageActu.setDate(annee, mois, jour, heure,  min);
     }
 
+    PlageHoraire getPlageLocation(const Location& l){
+        return l.getPlage();
+    }
+
+    QString getModeleLocation(const Location& l){
+        return l.getModele();
+    }
+
+    std::vector<Location> locationsClient(int id){
+        return lesLocations.locationClient(id);
+    }
 
     iteratorVoiture beginVoiture(){
         return vehicules.beginVoiture();
