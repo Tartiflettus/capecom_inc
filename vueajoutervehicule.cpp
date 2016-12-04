@@ -72,5 +72,4 @@ void VueAjouterVehicule::casVehicule(){
 }
 
 void VueAjouterVehicule::maj(){
-    std::cout<< "maj de ajouter véhicule\n";
 }
