@@ -57,6 +57,8 @@ void VueAjouterVehicule::ajouter(){
         Bus v(lineNbPlaces->text().toInt(), lineImmatriculation->text(), lineModele->text());
     }
 
+    garage->setCasUtilisation(Garage::ACCUEIL);
+
 }
 
 void VueAjouterVehicule::casVelo(){

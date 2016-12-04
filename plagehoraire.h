@@ -1,7 +1,7 @@
 #ifndef PLAGEHORAIRE_H
 #define PLAGEHORAIRE_H
-#include <stdio.h>
-#include <time.h>
+#include <cstdio>
+#include <ctime>
 
 class PlageHoraire {
 protected:
@@ -9,7 +9,7 @@ protected:
     struct tm plage;
 
 public:
-    PlageHoraire(const int& annee, const int& mois, const int& jour, const int& heure, const int& min){
+    PlageHoraire(const int annee, const int mois, const int jour, const int heure, const int min){
         plage.tm_year = annee;
         plage.tm_mon = mois;
         plage.tm_mday = jour;

@@ -20,7 +20,8 @@ SOURCES += main.cpp\
     vueaccueil.cpp \
     LesVehicules.cpp \
     vueajoutervehicule.cpp \
-    vuesupprimervehicule.cpp
+    vuesupprimervehicule.cpp \
+    location.cpp
 
 
 HEADERS  += doublevitrage.h \

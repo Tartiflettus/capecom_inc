@@ -33,7 +33,7 @@ public:
         lesVues.remove(v);
     }
 
-    void setCasUtilisation(casUt_t c){
+    void setCasUtilisation(const casUt_t c){
         casUtilisation = c;
         maj();
     }
@@ -68,7 +68,7 @@ public:
         maj();
     }
 
-    void supprimerVehicule(int id){
+    void supprimerVehicule(const int id){
         vehicules.supprimer(id);
         std::cout<< "véhicule supprimé\n";
         maj();
