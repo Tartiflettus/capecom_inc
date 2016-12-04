@@ -15,6 +15,7 @@ VueAccueil::VueAccueil(Garage& g, QWidget *parent): QWidget(parent), Vue(g)
     layoutFen->addLayout(layoutCas);
 
     btnAdmin = new QRadioButton("admin");
+    btnAdmin->setChecked(true);
     btnAjouterVehicule = new QPushButton("Ajouter véhicule");
     btnSupprimerVehicule = new QPushButton("Supprimer véhicule");
     btnSupprimerLocation = new QPushButton("Supprimer location");
