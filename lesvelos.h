@@ -16,6 +16,17 @@ public:
     void supprimer(const Velo& v){
         lesVelos.remove(v);
     }
+
+    using iterator=std::list<Velo>::iterator;
+
+    iterator begin(){
+        return lesVelos.begin();
+    }
+
+    iterator end(){
+        return lesVelos.end();
+    }
+
 };
 
 #endif // LESVELOS_H

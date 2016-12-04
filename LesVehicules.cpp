@@ -25,3 +25,29 @@ void LesVehicules::supprimer(const Velo& v){
     lesVelos.supprimer(v);
 }
 
+void LesVehicules::supprimer(int id){
+
+    for(auto& elem : lesVoitures){
+        if(elem.identifiant() == id){
+            lesVoitures.supprimer(elem);
+            return;
+        }
+    }
+
+    for(auto& elem : lesBus){
+        if(elem.identifiant() == id){
+            lesBus.supprimer(elem);
+            return;
+        }
+    }
+
+
+    for(auto& elem : lesVelos){
+        if(elem.identifiant() == id){
+            lesVelos.supprimer(elem);
+            return;
+        }
+    }
+
+}
+

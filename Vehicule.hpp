@@ -6,11 +6,11 @@
 //==Classe Abstraite : Vehicule==
 
 class Vehicule {
-
+    
 protected:
 
 	/// @brief identifiant unique d'un véhicule
-	int id;
+    int id;
 	int nbPlaces;
     QString plaqueImmatriculation;
     QString modeleVehicule;
@@ -24,10 +24,10 @@ Vehicule(int places);
 public:
 
     //fonctions de retour des champs Vehicule
-    int identifiant() const {return id;}
-    int places() const {return nbPlaces;}
-    QString plaque() const {return plaqueImmatriculation;}
-    QString modele() const {return modeleVehicule;}
+    int identifiant() {return id;}
+    int places() {return nbPlaces;}
+    QString plaque() {return plaqueImmatriculation;}
+    QString modele() {return modeleVehicule;}
 
     bool operator == (const Vehicule& v){
         return v.id == id;

@@ -2,6 +2,8 @@
 #define LESBUS_H
 
 #include "bus.h"
+#include <list>
+
 
 class LesBus {
 protected :
@@ -18,6 +20,16 @@ public :
 
     void supprimer(const Bus& b){
         lesBus.remove(b);
+    }
+
+    using iterator=std::list<Bus>::iterator;
+
+    iterator begin(){
+        return lesBus.begin();
+    }
+
+    iterator end(){
+        return lesBus.end();
     }
 };
 

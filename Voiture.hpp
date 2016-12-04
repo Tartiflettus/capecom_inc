@@ -10,7 +10,6 @@ public :
     {
     }
 
-<<<<<<< HEAD
     //Voiture();
 
 
@@ -18,8 +17,6 @@ public :
         return v.id == id;
     }
 
-=======
->>>>>>> 093095ccdd6ac17b2f7b024ac093037d072b1a98
 };
 
 #endif

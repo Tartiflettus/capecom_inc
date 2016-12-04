@@ -31,6 +31,9 @@ public:
 
     void supprimer(const Bus& b);
 
+    /*fonction de suppression de vehicules par ID*/
+    void supprimer(int id);
+
 };
 
 #endif // LESVEHICULES

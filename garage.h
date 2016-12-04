@@ -65,6 +65,12 @@ public:
         maj();
     }
 
+    void supprimerVehicule(int id){
+        vehicules.supprimer(id);
+        std::cout<< "véhicule supprimé\n";
+        maj();
+    }
+
 private:
     std::list<Vue*> lesVues;
 

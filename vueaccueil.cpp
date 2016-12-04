@@ -4,11 +4,8 @@
 
 #include "garage.h"
 
-<<<<<<< HEAD
+
 VueAccueil::VueAccueil(Garage& g, QWidget *parent): QWidget(parent), Vue(g)
-=======
-VueAccueil::VueAccueil(Garage& g, QWidget * parent): QWidget(parent), Vue(g)
->>>>>>> 093095ccdd6ac17b2f7b024ac093037d072b1a98
 {
 
     QVBoxLayout *layoutFen = new QVBoxLayout(); //layout global
