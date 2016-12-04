@@ -8,6 +8,7 @@
 #include "vueaccueil.h"
 #include "vueajoutervehicule.h"
 #include "vuesupprimervehicule.h"
+#include "vuesupprimerlocation.h"
 
 #include <map>
 

@@ -15,12 +15,13 @@ class Voiture;
 class Velo;
 class Bus;
 class Vue;
+class Location;
 
 class Garage
 {
 public:
 
-    enum casUt_t{ACCUEIL, AJOUTER_VEHICULE, SUPPRIMER_VEHICULE, nb_cas};
+    enum casUt_t{ACCUEIL, AJOUTER_VEHICULE, SUPPRIMER_VEHICULE, SUPPRIMER_LOCATION, nb_cas};
     enum vueUt_t{};
 
     Garage();
@@ -78,6 +79,15 @@ public:
         lesLocations.ajouter(loc);
         std::cout<< "location ajoutée\n";
         maj();
+    }
+
+    void supprimerLocation(int id){
+        for(auto& elem : lesLocations){
+            if(elem.identifiant() == id){
+                lesLocations.supprimer(elem);
+                return;
+            }
+        }
     }
 
     void setPlageHoraire(const int annee, const int mois, const int jour, const int heure, const int min){

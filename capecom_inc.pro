@@ -21,7 +21,8 @@ SOURCES += main.cpp\
     LesVehicules.cpp \
     vueajoutervehicule.cpp \
     vuesupprimervehicule.cpp \
-    location.cpp
+    location.cpp \
+    vuesupprimerlocation.cpp
 
 
 HEADERS  += doublevitrage.h \
@@ -42,7 +43,8 @@ HEADERS  += doublevitrage.h \
     client.h \
     location.h \
     leslocations.h \
-    plagehoraire.h
+    plagehoraire.h \
+    vuesupprimerlocation.h
 
 
 
