@@ -3,6 +3,9 @@
 #include <QHBoxLayout>
 #include <QFormLayout>
 
+#include <cassert>
+
+
 
 VueAjouterLocation::VueAjouterLocation(Garage& g, QWidget *parent) : QWidget(parent),Vue(g)
 {
@@ -34,6 +37,16 @@ VueAjouterLocation::VueAjouterLocation(Garage& g, QWidget *parent) : QWidget(par
         layoutTypes->addWidget(buttons[i]);
     }
 
+    layoutModeles = new QHBoxLayout();
+    layoutGlob->addLayout(layoutModeles);
+
+    getVehicules();
+
+
+    QPushButton *btnQuitter = new QPushButton("revenir");
+    layoutGlob->addWidget(btnQuitter);
+
+    QObject::connect(btnQuitter, SIGNAL(clicked()), this, SLOT(quitter()));
 
     setLayout(layoutGlob);
     garage->ajouterVue(*this);
@@ -41,17 +54,32 @@ VueAjouterLocation::VueAjouterLocation(Garage& g, QWidget *parent) : QWidget(par
 
 
 
-void VueAjouterLocation::getVehicules(int type){
-    /*switch (typeActu) {
+void VueAjouterLocation::getVehicules(){
+    switch (typeActu) {
     case VOITURE:
-        garage->
+        remplirModeles(garage->beginVoiture(), garage->endVoiture());
+        break;
+    case BUS:
+        remplirModeles(garage->beginBus(), garage->endBus());
+        break;
+    case VELO:
+        remplirModeles(garage->beginVelo(), garage->endVelo());
         break;
     default:
+        assert(false);
         break;
-    }*/
+    }
 }
+
+
 
 
 void VueAjouterLocation::maj(){
 
+}
+
+
+
+void VueAjouterLocation::quitter(){
+    garage->setCasUtilisation(Garage::ACCUEIL);
 }

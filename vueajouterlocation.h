@@ -9,6 +9,8 @@
 #include <QLineEdit>
 #include <QLabel>
 #include <QRadioButton>
+#include <list>
+#include <QLayout>
 
 
 class VueAjouterLocation : public QWidget, public Vue
@@ -26,18 +28,38 @@ private:
     QLabel *labels[nb_types];
     QRadioButton *buttons[nb_types];
 
+    std::list<QPushButton *> modeles;
+    QHBoxLayout *layoutModeles;
+
     int typeActu = VOITURE;
 
-    void getVehicules(int type);
+    void getVehicules();
 
+    template<typename T>
+    void remplirModeles(T iteratorBegin, T iteratorEnd);
 public:
     VueAjouterLocation(Garage &g, QWidget *parent = 0);
 
     virtual void maj();
 
-signals:
 
 public slots:
+    void quitter();
 };
+
+
+
+
+
+template<typename T>
+void VueAjouterLocation::remplirModeles(T iteratorBegin, T iteratorEnd){
+    for(T it=iteratorBegin; it != iteratorEnd; it++){
+        modeles.push_back(new QPushButton(it->modele(), this));
+        layoutModeles->addWidget(modeles.back());
+    }
+}
+
+
+
 
 #endif // VUEAJOUTERLOCATION_H

@@ -20,7 +20,9 @@ class Location;
 class Garage
 {
 public:
-
+    using iteratorVoiture=LesVehicules::iteratorVoiture;
+    using iteratorBus=LesVehicules::iteratorBus;
+    using iteratorVelo=LesVehicules::iteratorVelo;
 
     enum casUt_t{ACCUEIL, AJOUTER_VEHICULE, SUPPRIMER_VEHICULE, SUPPRIMER_LOCATION, AJOUTER_LOCATION, nb_cas};
 
@@ -94,6 +96,28 @@ public:
 
     void setPlageHoraire(const int annee, const int mois, const int jour, const int heure, const int min){
         plageActu.setDate(annee, mois, jour, heure,  min);
+    }
+
+
+    iteratorVoiture beginVoiture(){
+        return vehicules.beginVoiture();
+    }
+    iteratorVoiture endVoiture(){
+        return vehicules.endVoiture();
+    }
+
+    iteratorBus beginBus(){
+        return vehicules.beginBus();
+    }
+    iteratorBus endBus(){
+        return vehicules.endBus();
+    }
+
+    iteratorVelo beginVelo(){
+        return vehicules.beginVelo();
+    }
+    iteratorVelo endVelo(){
+        return vehicules.endVelo();
     }
 
 private:

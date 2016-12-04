@@ -15,6 +15,10 @@ protected:
     LesVelos lesVelos;
 
 public:
+    using iteratorVoiture=LesVoitures::iterator;
+    using iteratorBus=LesBus::iterator;
+    using iteratorVelo=LesVelos::iterator;
+
     LesVehicules():lesVoitures(), lesBus(), lesVelos(){}
     /*fonctions voitures*/
     void ajouter(const Voiture& v);
@@ -33,6 +37,27 @@ public:
 
     /*fonction de suppression de vehicules par ID*/
     void supprimer(int id);
+
+    iteratorVoiture beginVoiture(){
+        return lesVoitures.begin();
+    }
+    iteratorVoiture endVoiture(){
+        return lesVoitures.end();
+    }
+
+    iteratorBus beginBus(){
+        return lesBus.begin();
+    }
+    iteratorBus endBus(){
+        return lesBus.end();
+    }
+
+    iteratorVelo beginVelo(){
+        return lesVelos.begin();
+    }
+    iteratorVelo endVelo(){
+        return lesVelos.end();
+    }
 
 };
 
