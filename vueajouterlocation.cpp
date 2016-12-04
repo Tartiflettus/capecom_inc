@@ -98,6 +98,7 @@ void VueAjouterLocation::confirmer(){
     Location l(PlageHoraire(annee[DEBUT]->text().toInt(), mois[DEBUT]->text().toInt(), jour[DEBUT]->text().toInt()),
                Client(), *(vehicules[indexSelection]));
     garage->ajouterLocation(l);
+    garage->setCasUtilisation(Garage::ACCUEIL);
 }
 
 void VueAjouterLocation::selectionnerVehicule(int index){
