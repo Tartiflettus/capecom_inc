@@ -8,15 +8,21 @@
 class Location {
 protected:
     int id;
-    struct tm plage;
+    PlageHoraire plage;
     Client client;
-    Vehicule v;
+    Vehicule *vehicule;
 
-    /// @brief constructeur de location prenant une plage horaire, un client, une véhicule
-    Location(PlageHoraire plage, Client client, Vehicule v);
+
 public:
-    Location(): id(nextId())
-    {}
+    /// @brief constructeur de location prenant une plage horaire, un client, une véhicule
+    Location(const PlageHoraire& p, const Client& c, Vehicule& v):
+        id(nextId()), plage(p), client(c), vehicule(&v)
+    {
+    }
+
+    Location(): id(nextId()), vehicule(nullptr)
+    {
+    }
 
     bool operator == (const Location& loc){
         return loc.id == id;
