@@ -40,6 +40,18 @@ VueAjouterLocation::VueAjouterLocation(Garage& g, QWidget *parent) : QWidget(par
 }
 
 
+
+void VueAjouterLocation::getVehicules(int type){
+    /*switch (typeActu) {
+    case VOITURE:
+        garage->
+        break;
+    default:
+        break;
+    }*/
+}
+
+
 void VueAjouterLocation::maj(){
 
 }

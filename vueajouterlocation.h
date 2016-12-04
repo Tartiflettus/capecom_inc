@@ -26,6 +26,10 @@ private:
     QLabel *labels[nb_types];
     QRadioButton *buttons[nb_types];
 
+    int typeActu = VOITURE;
+
+    void getVehicules(int type);
+
 public:
     VueAjouterLocation(Garage &g, QWidget *parent = 0);
 
