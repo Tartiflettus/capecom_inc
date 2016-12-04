@@ -11,6 +11,8 @@
 #include <QRadioButton>
 #include <list>
 #include <QLayout>
+#include <vector>
+#include <QSignalMapper>
 
 
 class VueAjouterLocation : public QWidget, public Vue
@@ -28,12 +30,15 @@ private:
     QLabel *labels[nb_types];
     QRadioButton *buttons[nb_types];
 
-    std::list<QPushButton *> modeles;
+    std::vector<Vehicule*> vehicules;
+    std::vector<QPushButton *> modeles;
     QHBoxLayout *layoutModeles;
 
     int typeActu = VOITURE;
 
     void getVehicules();
+    QSignalMapper *mapper;
+    int indexSelection = 0;
 
     template<typename T>
     void remplirModeles(T iteratorBegin, T iteratorEnd);
@@ -45,6 +50,11 @@ public:
 
 public slots:
     void quitter();
+    void confirmer();
+    void typeToVoiture();
+    void typeToBus();
+    void typeToVelo();
+    void selectionnerVehicule(int index);
 };
 
 
@@ -53,10 +63,17 @@ public slots:
 
 template<typename T>
 void VueAjouterLocation::remplirModeles(T iteratorBegin, T iteratorEnd){
+    int i=0;
     for(T it=iteratorBegin; it != iteratorEnd; it++){
+        vehicules.push_back(&(*it));
         modeles.push_back(new QPushButton(it->modele(), this));
         layoutModeles->addWidget(modeles.back());
+        QObject::connect(modeles.back(), SIGNAL(clicked()), mapper, SLOT(map()));
+        mapper->setMapping(modeles.back(), i);
+        i++;
     }
+
+    QObject::connect(mapper, SIGNAL(mapped(int)), this, SLOT(selectionnerVehicule(int)));
 }
 
 

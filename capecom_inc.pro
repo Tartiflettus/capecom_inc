@@ -51,7 +51,8 @@ HEADERS  += doublevitrage.h \
     plagehoraire.h \
     vuesupprimerlocation.h \
     vueajouterlocation.h \
-    vueafficherlocationclient.h
+    vueafficherlocationclient.h \
+    vueaffichervehicules.h
 
 
 

@@ -10,6 +10,7 @@
 #include "vuesupprimervehicule.h"
 #include "vuesupprimerlocation.h"
 #include "vueajouterlocation.h"
+#include "vueafficherlocationclient.h"
 
 
 #include <map>

@@ -15,10 +15,12 @@ VueAccueil::VueAccueil(Garage& g, QWidget *parent): QWidget(parent), Vue(g)
     layoutFen->addLayout(layoutCas);
 
     btnAdmin = new QRadioButton("admin");
+    btnAdmin->setChecked(true);
     btnAjouterVehicule = new QPushButton("Ajouter véhicule");
     btnSupprimerVehicule = new QPushButton("Supprimer véhicule");
     btnSupprimerLocation = new QPushButton("Supprimer location");
     btnAjouterLocation = new QPushButton("Ajouter location");
+    btnConsulterLocation = new QPushButton("Consulter location");
 
 
     layoutActeurs->addWidget(btnAdmin);
@@ -26,6 +28,7 @@ VueAccueil::VueAccueil(Garage& g, QWidget *parent): QWidget(parent), Vue(g)
     layoutCas->addWidget(btnSupprimerVehicule);
     layoutCas->addWidget(btnSupprimerLocation);
     layoutCas->addWidget(btnAjouterLocation);
+    layoutCas->addWidget(btnConsulterLocation);
 
     this->setLayout(layoutFen);
 
@@ -33,9 +36,13 @@ VueAccueil::VueAccueil(Garage& g, QWidget *parent): QWidget(parent), Vue(g)
     QObject::connect(btnSupprimerVehicule, SIGNAL(clicked()), this, SLOT(supprimerVehicule()));
     QObject::connect(btnSupprimerLocation, SIGNAL(clicked()), this, SLOT(supprimerLocation()));
     QObject::connect(btnAjouterLocation,SIGNAL(clicked()), this, SLOT(ajouterLocation()));
+    QObject::connect(btnConsulterLocation,SIGNAL(clicked()), this, SLOT(consulterLocation()));
     garage->ajouterVue(*this);
 }
 
+void VueAccueil::consulterLocation(){
+    garage->setCasUtilisation(Garage::CONSULTER_LOCATION);
+}
 
 void VueAccueil::ajouterVehicule(){
     garage->setCasUtilisation(Garage::AJOUTER_VEHICULE);

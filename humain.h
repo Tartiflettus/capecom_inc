@@ -31,12 +31,10 @@ public:
     QString getPrenom() {return prenom;}
     QString getAdresse() {return adresse;}
 
-private:
 
+private:
     static int _idActu;
-    static int nextId(){
-        return _idActu++;
-    }
+    static int nextId();
 };
 
 #endif // HUMAIN_H

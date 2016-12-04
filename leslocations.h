@@ -4,6 +4,7 @@
 #include "location.h"
 #include <list>
 #include <vector>
+#include <iostream>
 
 class LesLocations {
 protected:
@@ -16,6 +17,7 @@ public :
 
     void ajouter(const Location& l){
         lesLocations.push_back(l);
+        std::cout<< lesLocations.back().identifiant() << std::endl;
     }
 
     void supprimer(const Location& l){

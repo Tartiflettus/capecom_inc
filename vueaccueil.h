@@ -11,7 +11,7 @@ class VueAccueil : public QWidget, public Vue
     Q_OBJECT
 private:
     QRadioButton *btnAdmin;
-    QPushButton *btnAjouterVehicule, *btnSupprimerVehicule, *btnSupprimerLocation, *btnAjouterLocation;
+    QPushButton *btnAjouterVehicule, *btnSupprimerVehicule, *btnSupprimerLocation, *btnAjouterLocation, *btnConsulterLocation;
 
 
 public:
@@ -20,6 +20,7 @@ public:
     virtual void maj();
 
 public slots:
+    void consulterLocation();
     void ajouterVehicule();
     void supprimerVehicule();
     void supprimerLocation();

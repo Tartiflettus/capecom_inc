@@ -37,16 +37,25 @@ VueAjouterLocation::VueAjouterLocation(Garage& g, QWidget *parent) : QWidget(par
         layoutTypes->addWidget(buttons[i]);
     }
 
+    QObject::connect(buttons[VOITURE], SIGNAL(clicked()), this, SLOT(typeToVoiture()));
+    QObject::connect(buttons[BUS], SIGNAL(clicked()), this, SLOT(typeToBus()));
+    QObject::connect(buttons[VELO], SIGNAL(clicked()), this, SLOT(typeToVelo()));
+
     layoutModeles = new QHBoxLayout();
     layoutGlob->addLayout(layoutModeles);
 
+    mapper = new QSignalMapper(this);
     getVehicules();
 
 
     QPushButton *btnQuitter = new QPushButton("revenir");
+    QPushButton *btnConfirmer = new QPushButton("confirmer");
     layoutGlob->addWidget(btnQuitter);
+    layoutGlob->addWidget(btnConfirmer);
+
 
     QObject::connect(btnQuitter, SIGNAL(clicked()), this, SLOT(quitter()));
+    QObject::connect(btnConfirmer, SIGNAL(clicked()), this, SLOT(confirmer()));
 
     setLayout(layoutGlob);
     garage->ajouterVue(*this);
@@ -59,6 +68,7 @@ void VueAjouterLocation::getVehicules(){
         delete elem;
     }
     modeles.clear();
+    vehicules.clear();
     switch (typeActu) {
         case VOITURE:
             remplirModeles(garage->beginVoiture(), garage->endVoiture());
@@ -86,4 +96,33 @@ void VueAjouterLocation::maj(){
 
 void VueAjouterLocation::quitter(){
     garage->setCasUtilisation(Garage::ACCUEIL);
+}
+
+void VueAjouterLocation::confirmer(){
+    Location l(PlageHoraire(annee[DEBUT]->text().toInt(), mois[DEBUT]->text().toInt(), jour[DEBUT]->text().toInt()),
+               Client(), *(vehicules[indexSelection]));
+    garage->ajouterLocation(l);
+    garage->setCasUtilisation(Garage::ACCUEIL);
+}
+
+
+void VueAjouterLocation::typeToVoiture(){
+    VueAjouterLocation::typeActu=VOITURE;
+    VueAjouterLocation::maj();
+}
+
+void VueAjouterLocation::typeToBus(){
+    VueAjouterLocation::typeActu=BUS;
+    VueAjouterLocation::maj();
+}
+
+void VueAjouterLocation::typeToVelo(){
+    VueAjouterLocation::typeActu=VELO;
+    VueAjouterLocation::maj();
+}
+
+
+void VueAjouterLocation::selectionnerVehicule(int index){
+    indexSelection = index;
+    std::cout<< "index : "<< indexSelection<< "\n";
 }

@@ -10,23 +10,29 @@
 
 VueAfficherLocationClient::VueAfficherLocationClient(Garage& g, QWidget *parent) : QWidget(parent),Vue(g)
 {
-    QVBoxLayout *layoutGlob = new QVBoxLayout();
+    layoutGlob = new QVBoxLayout();
+    layoutsForm = new QFormLayout();
+
     btnQuitter =  new QPushButton("quitter");
     id = new QLineEdit();
+    btnConfirmer = new QPushButton("confirmer");
+
+    layoutGlob->addWidget(btnQuitter);
+    layoutGlob->addWidget(id);
+    layoutGlob->addWidget(btnConfirmer);
 
     QObject::connect(btnQuitter, SIGNAL(clicked()), this, SLOT(quitter()));
+    QObject::connect(btnConfirmer, SIGNAL(clicked()), this, SLOT(afficherLocations()));
 
+    layoutGlob->addLayout(layoutsForm);
     setLayout(layoutGlob);
     garage->ajouterVue(*this);
 }
-
-
 
 void VueAfficherLocationClient::afficherLocations(){
     std::vector<Location> listLocations;
     listLocations = garage->locationsClient(id->text().toInt());
     int nbLocations = listLocations.size();
-    QFormLayout* layoutsForm[nbLocations] = {new QFormLayout(), new QFormLayout()};
     PlageHoraire plage;
     QString modele;
 
@@ -34,10 +40,11 @@ void VueAfficherLocationClient::afficherLocations(){
         plage = garage->getPlageLocation(listLocations[i]);
         modele = garage->getModeleLocation(listLocations[i]);
 
-        layoutsForm[i]->addRow("annee", new QLabel(QString::number(plage.annee())));
-        layoutsForm[i]->addRow("mois",new QLabel(QString::number (plage.mois())));
-        layoutsForm[i]->addRow("jour", new QLabel(QString::number(plage.jour())));
-        layoutsForm[i]->addRow("modele", new QLabel(modele));
+        layoutsForm->addRow("annee", new QLabel(QString::number(plage.annee())));
+        layoutsForm->addRow("mois",new QLabel(QString::number (plage.mois())));
+        layoutsForm->addRow("jour", new QLabel(QString::number(plage.jour())));
+        layoutsForm->addRow("modele", new QLabel(modele));
+
     }
 
 }

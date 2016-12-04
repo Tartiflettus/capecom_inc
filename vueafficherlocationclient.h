@@ -6,6 +6,8 @@
 #include <QLineEdit>
 #include "vue.h"
 #include <vector>
+#include <QVBoxLayout>
+#include <QFormLayout>
 
 class VueAfficherLocationClient : public QWidget, public Vue
 {
@@ -13,7 +15,9 @@ class VueAfficherLocationClient : public QWidget, public Vue
 private:
 
     QLineEdit* id;
-    QPushButton* btnQuitter;
+    QPushButton* btnQuitter, *btnConfirmer;
+    QVBoxLayout *layoutGlob;
+    QFormLayout* layoutsForm;
 
 
 public:
