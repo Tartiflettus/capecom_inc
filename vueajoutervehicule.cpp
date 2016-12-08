@@ -85,6 +85,6 @@ void VueAjouterVehicule::maj(){
 
 
 void VueAfficherNumVehicule::maj(){
-    setIdentifiant(garage->getLocationActu().identifiant());
+    setIdentifiant(garage->getVehiculeActu().identifiant());
 }
 

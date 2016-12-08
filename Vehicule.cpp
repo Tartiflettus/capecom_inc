@@ -8,11 +8,13 @@ Vehicule::Vehicule(int places, const QString& plaque, const QString& mod) :
     id(nextId()),
     nbPlaces(places),
     plaqueImmatriculation(plaque),
-    modeleVehicule(mod)
+    modeleVehicule(mod),
+    locations()
 {
 }
 
-Vehicule::Vehicule(int places) : id(nextId()),
+Vehicule::Vehicule(int places) :
+    id(nextId()),
     nbPlaces(places)
 {
 }

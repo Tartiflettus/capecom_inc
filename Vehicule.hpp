@@ -32,10 +32,10 @@ public:
 
     Vehicule(){}
     //fonctions de retour des champs Vehicule
-    int identifiant() {return id;}
-    int places() {return nbPlaces;}
-    QString plaque() {return plaqueImmatriculation;}
-    QString modele() {return modeleVehicule;}
+    int identifiant() const{return id;}
+    int places() const{return nbPlaces;}
+    QString plaque() const{return plaqueImmatriculation;}
+    QString modele() const{return modeleVehicule;}
 
     bool operator == (const Vehicule& v){
         return v.id == id;
@@ -44,10 +44,15 @@ public:
     iterator begin();
     iterator end();
 
+    void putLocation(Location* loc){
+        locations.push_back(loc);
+    }
+
 private:
 
     static int _idActu;
     static int nextId();
+
 };
 
 #endif
