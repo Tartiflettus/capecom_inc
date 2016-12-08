@@ -102,7 +102,7 @@ void VueAjouterLocation::confirmer(){
     Location l(PlageHoraire(annee[DEBUT]->text().toInt(), mois[DEBUT]->text().toInt(), jour[DEBUT]->text().toInt()),
                Client(), *(vehicules[indexSelection]));
     garage->ajouterLocation(l);
-    garage->setCasUtilisation(Garage::ACCUEIL);
+    garage->setCasUtilisation(Garage::VOIR_NUM_LOCATION);
 }
 
 
@@ -126,3 +126,43 @@ void VueAjouterLocation::selectionnerVehicule(int index){
     indexSelection = index;
     std::cout<< "index : "<< indexSelection<< "\n";
 }
+
+
+
+
+
+
+
+//vue num location////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+VueNumLocation::VueNumLocation(Garage &g, QWidget *parent): QWidget(parent), Vue(g)
+{
+    QVBoxLayout *layoutGlob = new QVBoxLayout();
+    setLayout(layoutGlob);
+
+    numLocation = new QLabel();
+    btnConfirmer = new QPushButton("confirmer");
+    layoutGlob->addWidget(numLocation);
+    layoutGlob->addWidget(btnConfirmer);
+
+    QObject::connect(btnConfirmer, SIGNAL(clicked()), this, SLOT(confirmer()));
+
+    garage->ajouterVue(*this);
+}
+
+
+
+void VueNumLocation::confirmer(){
+    garage->setCasUtilisation(Garage::ACCUEIL);
+}
+
+void VueNumLocation::maj(){
+    numLocation->setText(QString::number(garage->getLocationActu().identifiant()));
+}
+
+

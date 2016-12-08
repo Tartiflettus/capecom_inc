@@ -25,7 +25,7 @@ public:
     using iteratorBus=LesVehicules::iteratorBus;
     using iteratorVelo=LesVehicules::iteratorVelo;
 
-    enum casUt_t{ACCUEIL, AJOUTER_VEHICULE, SUPPRIMER_VEHICULE, SUPPRIMER_LOCATION, AJOUTER_LOCATION, CONSULTER_LOCATION, nb_cas};
+    enum casUt_t{ACCUEIL, AJOUTER_VEHICULE, SUPPRIMER_VEHICULE, SUPPRIMER_LOCATION, AJOUTER_LOCATION, VOIR_NUM_LOCATION, CONSULTER_LOCATION, nb_cas};
 
     enum vueUt_t{};
 
@@ -52,20 +52,22 @@ public:
         return vueActu;
     }
 
-    void ajouterVehicule(){
-    }
+
 
     void ajouterVoiture(const Voiture& v){
+        ajouterVehicule(v);
         vehicules.ajouter(v);
         maj();
     }
 
     void ajouterVelo(const Velo& v){
+        ajouterVehicule(v);
         vehicules.ajouter(v);
         maj();
     }
 
     void ajouterBus(const Bus& b){
+        ajouterVehicule(b);
         vehicules.ajouter(b);
         maj();
     }
@@ -76,6 +78,7 @@ public:
     }
 
     void ajouterLocation(const Location& loc){
+        locationActu = loc;
         lesLocations.ajouter(loc);
         maj();
     }
@@ -99,6 +102,10 @@ public:
 
     QString getModeleLocation(const Location& l){
         return l.getModele();
+    }
+
+    const Location& getLocationActu(){
+        return locationActu;
     }
 
     std::vector<Location> locationsClient(int id){
@@ -138,9 +145,14 @@ private:
     Location locationActu;
     PlageHoraire plageActu;
     Client clientActu;
+    Vehicule vehiculeActu;
 
     //@brief avertir les vues du changement
     void maj();
+
+    void ajouterVehicule(const Vehicule& v){
+        vehiculeActu = v;
+    }
 
 
 };

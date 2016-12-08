@@ -36,6 +36,8 @@ void VueAfficherLocationClient::afficherLocations(){
     PlageHoraire plage;
     QString modele;
 
+    setUpdatesEnabled(false);
+
     for(int i=0; i < nbLocations; i++){
         plage = garage->getPlageLocation(listLocations[i]);
         modele = garage->getModeleLocation(listLocations[i]);
@@ -47,8 +49,8 @@ void VueAfficherLocationClient::afficherLocations(){
 
     }
 
-    updateGeometry();
-
+    setUpdatesEnabled(true);
+    repaint();
 }
 
 

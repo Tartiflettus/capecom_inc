@@ -79,4 +79,22 @@ void VueAjouterLocation::remplirModeles(T iteratorBegin, T iteratorEnd){
 
 
 
+class VueNumLocation : public QWidget, public Vue
+{
+Q_OBJECT
+private:
+    QLabel *numLocation;
+    QPushButton *btnConfirmer;
+
+public:
+    VueNumLocation(Garage &g, QWidget *parent = 0);
+
+    virtual void maj();
+
+public slots:
+    void confirmer();
+};
+
+
+
 #endif // VUEAJOUTERLOCATION_H
