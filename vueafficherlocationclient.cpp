@@ -33,17 +33,17 @@ void VueAfficherLocationClient::afficherLocations(){
     std::vector<Location> listLocations;
     listLocations = garage->locationsClient(id->text().toInt());
     int nbLocations = listLocations.size();
-    PlageHoraire plage;
+    QDate debut;
     QString modele;
 
     setUpdatesEnabled(false);
     for(int i=0; i < nbLocations; i++){
-        plage = garage->getPlageLocation(listLocations[i]);
-        modele = garage->getModeleLocation(listLocations[i]);
+        debut = listLocations[i].getDebut();
+        modele = listLocations[i].getModele();
 
-        layoutsForm->addRow("annee", new QLabel(QString::number(plage.annee())));
-        layoutsForm->addRow("mois",new QLabel(QString::number (plage.mois())));
-        layoutsForm->addRow("jour", new QLabel(QString::number(plage.jour())));
+        layoutsForm->addRow("annee", new QLabel(QString::number(debut.year())));
+        layoutsForm->addRow("mois",new QLabel(QString::number (debut.month())));
+        layoutsForm->addRow("jour", new QLabel(QString::number(debut.day())));
         layoutsForm->addRow("modele", new QLabel(modele));
 
     }

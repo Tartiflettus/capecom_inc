@@ -96,13 +96,6 @@ public:
         plageActu.setDate(annee, mois, jour, heure,  min);
     }
 
-    PlageHoraire getPlageLocation(const Location& l){
-        return l.getPlage();
-    }
-
-    QString getModeleLocation(const Location& l){
-        return l.getModele();
-    }
 
     const Location& getLocationActu() const{
         return locationActu;
