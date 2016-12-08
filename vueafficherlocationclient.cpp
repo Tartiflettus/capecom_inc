@@ -30,7 +30,7 @@ VueAfficherLocationClient::VueAfficherLocationClient(Garage& g, QWidget *parent)
 }
 
 void VueAfficherLocationClient::afficherLocations(){
-    std::vector<Location> listLocations;
+    std::vector<Location*> listLocations;
     listLocations = garage->locationsClient(id->text().toInt());
     int nbLocations = listLocations.size();
     QDate debut;
@@ -38,8 +38,8 @@ void VueAfficherLocationClient::afficherLocations(){
 
     setUpdatesEnabled(false);
     for(int i=0; i < nbLocations; i++){
-        debut = listLocations[i].getDebut();
-        modele = listLocations[i].getModele();
+        debut = listLocations[i]->getDebut();
+        modele = listLocations[i]->getModele();
 
         layoutsForm->addRow("annee", new QLabel(QString::number(debut.year())));
         layoutsForm->addRow("mois",new QLabel(QString::number (debut.month())));

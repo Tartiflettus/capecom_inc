@@ -71,9 +71,9 @@ void VueAjouterLocation::remplirModeles(T iteratorBegin, T iteratorEnd){
 
     int i=0;
     for(T it=iteratorBegin; it != iteratorEnd; it++){
-        if(vehiculeDisponible(d, *it, f)){
-            vehicules.push_back(&(*it));
-            modeles.push_back(new QPushButton(it->modele(), this));
+        if(vehiculeDisponible(d, *(*it), f)){
+            vehicules.push_back(*it);
+            modeles.push_back(new QPushButton((*it)->modele(), this));
             layoutModeles->addWidget(modeles.back());
             QObject::connect(modeles.back(), SIGNAL(clicked()), mapper, SLOT(map()));
             mapper->setMapping(modeles.back(), i);

@@ -24,11 +24,13 @@ protected:
 /// @brief constructeur prennant un id, nb_places, plaque et modele
 Vehicule(int places, const QString& imm,
         const QString& mod);
-/// @brief constructeur pour vélo prenant le nombre de places
-Vehicule(int places);
+/// @brief constructeur pour vélo prenant le nombre de places et le modele
+Vehicule(int places, const QString& mod);
 
 public:
     using iterator=std::list<Location*>::iterator;
+
+    Vehicule(int places);
 
     Vehicule(){}
     //fonctions de retour des champs Vehicule

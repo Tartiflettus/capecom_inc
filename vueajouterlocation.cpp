@@ -99,7 +99,7 @@ void VueAjouterLocation::quitter(){
 }
 
 void VueAjouterLocation::confirmer(){
-    Location l(QDate(annee[DEBUT]->text().toInt(), mois[DEBUT]->text().toInt(), jour[DEBUT]->text().toInt()),
+    Location *l = new Location(QDate(annee[DEBUT]->text().toInt(), mois[DEBUT]->text().toInt(), jour[DEBUT]->text().toInt()),
                QDate(annee[FIN]->text().toInt(), mois[FIN]->text().toInt(), jour[FIN]->text().toInt()),
                Client(), *(vehicules[indexSelection]));
     garage->ajouterLocation(l);

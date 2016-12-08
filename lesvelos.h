@@ -5,19 +5,19 @@
 
 class LesVelos {
 protected:
-    std::list<Velo> lesVelos;
+    std::list<Velo*> lesVelos;
 public:
     LesVelos() {};
 
-    void ajouter(const Velo& v){
+    void ajouter(Velo *v){
          lesVelos.push_back(v);
     }
 
-    void supprimer(const Velo& v){
+    void supprimer(Velo *v){
         lesVelos.remove(v);
     }
 
-    using iterator=std::list<Velo>::iterator;
+    using iterator=std::list<Velo*>::iterator;
 
     iterator begin(){
         return lesVelos.begin();

@@ -21,19 +21,19 @@ public:
 
     LesVehicules():lesVoitures(), lesBus(), lesVelos(){}
     /*fonctions voitures*/
-    void ajouter(const Voiture& v);
+    void ajouter(Voiture *v);
 
-    void supprimer(const Voiture& v);
+    void supprimer(Voiture *v);
 
     /*fonctions velos*/
-    void ajouter(const Velo& v);
+    void ajouter(Velo *v);
 
-    void supprimer(const Velo& v);
+    void supprimer(Velo *v);
 
     /*fonctions bus*/
-    void ajouter(const Bus& b);
+    void ajouter(Bus *b);
 
-    void supprimer(const Bus& b);
+    void supprimer(Bus *b);
 
     /*fonction de suppression de vehicules par ID*/
     void supprimer(int id);
