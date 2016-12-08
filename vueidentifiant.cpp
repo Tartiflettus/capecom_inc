@@ -17,7 +17,7 @@ VueIdentifiant::VueIdentifiant(Garage& g, QWidget *parent): QWidget(parent), Vue
 }
 
 
-void VueIdentifiant::setIdentifiant(int id){
+void VueIdentifiant::setIdentifiant(const int id){
     numero->setText(QString::number(id));
 }
 
