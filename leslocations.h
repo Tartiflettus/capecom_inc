@@ -9,22 +9,22 @@
 class LesLocations {
 protected:
 
-    std::list<Location> lesLocations;
+    std::list<Location*> lesLocations;
 
 public :
 
     LesLocations(){};
 
-    void ajouter(const Location& l){
+    void ajouter(Location* l){
         lesLocations.push_back(l);
-        std::cout<< lesLocations.back().identifiant() << std::endl;
+        std::cout<< lesLocations.back()->identifiant() << std::endl;
     }
 
-    void supprimer(const Location& l){
+    void supprimer(Location *l){
         lesLocations.remove(l);
     }
 
-    using iterator=std::list<Location>::iterator;
+    using iterator=std::list<Location*>::iterator;
 
     iterator begin(){
         return lesLocations.begin();
@@ -34,7 +34,7 @@ public :
         return lesLocations.end();
     }
 
-    std::vector<Location> locationClient(int id);
+    std::vector<Location*> locationClient(int id);
 
 };
 

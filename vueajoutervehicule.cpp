@@ -46,15 +46,15 @@ VueAjouterVehicule::VueAjouterVehicule(Garage& g, QWidget* parent): QWidget(pare
 
 void VueAjouterVehicule::ajouter(){
     if(btnVoiture->isChecked()){
-        Voiture v(lineNbPlaces->text().toInt(), lineImmatriculation->text(), lineModele->text());
+        Voiture *v = new Voiture(lineNbPlaces->text().toInt(), lineImmatriculation->text(), lineModele->text());
 
         garage->ajouterVoiture(v);
     }else if(btnVelo->isChecked()){
-        Velo v(lineNbPlaces->text().toInt(), lineModele->text());
+        Velo *v = new Velo(lineNbPlaces->text().toInt(), lineModele->text());
 
         garage->ajouterVelo(v);
     }else if(btnBus->isChecked()){
-        Bus v(lineNbPlaces->text().toInt(), lineImmatriculation->text(), lineModele->text());
+        Bus *v = new Bus(lineNbPlaces->text().toInt(), lineImmatriculation->text(), lineModele->text());
         garage->ajouterBus(v);
     }
 

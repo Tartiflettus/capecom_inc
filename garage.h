@@ -54,19 +54,19 @@ public:
 
 
 
-    void ajouterVoiture(const Voiture& v){
+    void ajouterVoiture(Voiture *v){
         ajouterVehicule(v);
         vehicules.ajouter(v);
         maj();
     }
 
-    void ajouterVelo(const Velo& v){
+    void ajouterVelo(Velo *v){
         ajouterVehicule(v);
         vehicules.ajouter(v);
         maj();
     }
 
-    void ajouterBus(const Bus& b){
+    void ajouterBus(Bus *b){
         ajouterVehicule(b);
         vehicules.ajouter(b);
         maj();
@@ -77,15 +77,15 @@ public:
         maj();
     }
 
-    void ajouterLocation(const Location& loc){
-        locationActu = loc;
+    void ajouterLocation(Location* loc){
+        locationActu = *loc;
         lesLocations.ajouter(loc);
         maj();
     }
 
     void supprimerLocation(int id){
         for(auto& elem : lesLocations){
-            if(elem.identifiant() == id){
+            if(elem->identifiant() == id){
                 lesLocations.supprimer(elem);
                 return;
             }
@@ -105,7 +105,7 @@ public:
         return vehiculeActu;
     }
 
-    std::vector<Location> locationsClient(int id){
+    std::vector<Location*> locationsClient(int id){
         return lesLocations.locationClient(id);
     }
 
@@ -147,8 +147,8 @@ private:
     //@brief avertir les vues du changement
     void maj();
 
-    void ajouterVehicule(const Vehicule& v){
-        vehiculeActu = v;
+    void ajouterVehicule(Vehicule *v){
+        vehiculeActu = *v;
     }
 
 

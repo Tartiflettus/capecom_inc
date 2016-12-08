@@ -8,21 +8,21 @@
 class LesBus {
 protected :
 
-    std::list<Bus> lesBus;
+    std::list<Bus*> lesBus;
 
 public :
 
     LesBus(){};
 
-    void ajouter(const Bus& b){
+    void ajouter(Bus *b){
         lesBus.push_back(b);
     }
 
-    void supprimer(const Bus& b){
+    void supprimer(Bus *b){
         lesBus.remove(b);
     }
 
-    using iterator=std::list<Bus>::iterator;
+    using iterator=std::list<Bus*>::iterator;
 
     iterator begin(){
         return lesBus.begin();

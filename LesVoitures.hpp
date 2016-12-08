@@ -8,21 +8,21 @@
 class LesVoitures {
 protected :
 
-    std::list<Voiture> lesVoitures;
+    std::list<Voiture*> lesVoitures;
 
 public :
 
     LesVoitures(){};
 
-    void ajouter(const Voiture& v){
+    void ajouter(Voiture* v){
         lesVoitures.push_back(v);
     }
 
-    void supprimer(const Voiture& v){
+    void supprimer(Voiture* v){
         lesVoitures.remove(v);
     }
 
-    using iterator=std::list<Voiture>::iterator;
+    using iterator=std::list<Voiture*>::iterator;
 
     iterator begin(){
         return lesVoitures.begin();
