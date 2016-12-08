@@ -58,7 +58,7 @@ void VueAjouterVehicule::ajouter(){
         garage->ajouterBus(v);
     }
 
-    garage->setCasUtilisation(Garage::ACCUEIL);
+    garage->setCasUtilisation(Garage::VOIR_NUM_VEHICULE);
 
 }
 
@@ -74,3 +74,17 @@ void VueAjouterVehicule::casVehicule(){
 
 void VueAjouterVehicule::maj(){
 }
+
+
+
+
+
+
+//vue afficher num véhicule//////////////////////////////////////////////
+
+
+
+void VueAfficherNumVehicule::maj(){
+    setIdentifiant(garage->getLocationActu().identifiant());
+}
+

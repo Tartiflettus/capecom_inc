@@ -25,7 +25,7 @@ public:
     using iteratorBus=LesVehicules::iteratorBus;
     using iteratorVelo=LesVehicules::iteratorVelo;
 
-    enum casUt_t{ACCUEIL, AJOUTER_VEHICULE, SUPPRIMER_VEHICULE, SUPPRIMER_LOCATION, AJOUTER_LOCATION, VOIR_NUM_LOCATION, CONSULTER_LOCATION, nb_cas};
+    enum casUt_t{ACCUEIL, AJOUTER_VEHICULE, VOIR_NUM_VEHICULE, SUPPRIMER_VEHICULE, SUPPRIMER_LOCATION, AJOUTER_LOCATION, VOIR_NUM_LOCATION, CONSULTER_LOCATION, nb_cas};
 
     enum vueUt_t{};
 

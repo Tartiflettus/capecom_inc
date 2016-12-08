@@ -25,6 +25,7 @@ void DoubleVitrage::maj(){
     static QWidget * const mapCasUt[] = {
         new VueAccueil(garage),
         new VueAjouterVehicule(garage),
+        new VueAfficherNumVehicule(garage),
         new VueSupprimerVehicule(garage),
         new VueSupprimerLocation(garage),
         new VueAjouterLocation(garage),

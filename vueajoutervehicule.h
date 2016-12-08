@@ -6,6 +6,7 @@
 #include <QRadioButton>
 #include <QLineEdit>
 #include "vue.h"
+#include "vueidentifiant.h"
 
 class VueAjouterVehicule : public QWidget, public Vue
 {
@@ -30,5 +31,24 @@ public slots:
     void casVelo();
     void casVehicule();
 };
+
+
+
+
+
+
+class VueAfficherNumVehicule : public VueIdentifiant
+{
+public:
+    VueAfficherNumVehicule(Garage &g, QWidget *parent = 0): VueIdentifiant(g, parent)
+    {
+    }
+
+    virtual void maj();
+
+};
+
+
+
 
 #endif // VUEAJOUTERVEHICULE_H
