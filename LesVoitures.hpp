@@ -5,6 +5,8 @@
 #include <list>
 #include "Voiture.hpp"
 
+#include <memory>
+
 class LesVoitures {
 protected :
 
