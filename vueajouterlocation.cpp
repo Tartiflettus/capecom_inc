@@ -130,6 +130,12 @@ void VueAjouterLocation::selectionnerVehicule(int index){
 
 
 
+bool VueAjouterLocation::vehiculeDisponible(const QDate& d, const Vehicule& v, const QDate& f){
+    return true;
+}
+
+
+
 
 
 

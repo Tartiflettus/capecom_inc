@@ -3,8 +3,12 @@
 
 #include "plagehoraire.h"
 #include "client.h"
-#include "Vehicule.hpp"
+
 #include <QDate>
+
+
+class Vehicule;
+
 
 class Location {
 protected:
@@ -17,30 +21,18 @@ protected:
 
 public:
     /// @brief constructeur de location prenant une plage horaire, un client, une véhicule
-    Location(const QDate& d, const QDate& f, const Client& c, Vehicule& v):
-        id(nextId()), debut(d), fin(f), client(c), vehicule(&v)
-    {
-    }
+    Location(const QDate& d, const QDate& f, const Client& c, Vehicule& v);
 
-    Location(): id(nextId()), vehicule(nullptr)
-    {
-    }
+    Location();
 
-    int identifiant() const{
-        return id;
-    }
 
-    QDate getDebut() const{
-        return debut;
-    }
+    int identifiant() const;
 
-    QDate getFin() const{
-        return fin;
-    }
+    QDate getDebut() const;
 
-    QString getModele()const{
-        return vehicule->modele();
-    }
+    QDate getFin() const;
+
+    QString getModele()const;
 
     bool operator == (const Location& loc){
         return loc.id == id;
