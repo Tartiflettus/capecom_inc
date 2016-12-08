@@ -137,32 +137,14 @@ void VueAjouterLocation::selectionnerVehicule(int index){
 
 
 
-
-
-
-VueNumLocation::VueNumLocation(Garage &g, QWidget *parent): QWidget(parent), Vue(g)
-{
-    QVBoxLayout *layoutGlob = new QVBoxLayout();
-    setLayout(layoutGlob);
-
-    numLocation = new QLabel();
-    btnConfirmer = new QPushButton("confirmer");
-    layoutGlob->addWidget(numLocation);
-    layoutGlob->addWidget(btnConfirmer);
-
-    QObject::connect(btnConfirmer, SIGNAL(clicked()), this, SLOT(confirmer()));
-
-    garage->ajouterVue(*this);
-}
-
-
-
-void VueNumLocation::confirmer(){
-    garage->setCasUtilisation(Garage::ACCUEIL);
-}
-
 void VueNumLocation::maj(){
-    numLocation->setText(QString::number(garage->getLocationActu().identifiant()));
+    setIdentifiant(garage->getLocationActu().identifiant());
 }
+
+
+
+
+
+
 
 

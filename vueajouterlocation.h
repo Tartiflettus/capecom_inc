@@ -13,6 +13,7 @@
 #include <QLayout>
 #include <vector>
 #include <QSignalMapper>
+#include "vueidentifiant.h"
 
 
 class VueAjouterLocation : public QWidget, public Vue
@@ -79,7 +80,7 @@ void VueAjouterLocation::remplirModeles(T iteratorBegin, T iteratorEnd){
 
 
 
-class VueNumLocation : public QWidget, public Vue
+/*class VueNumLocation : public QWidget, public Vue
 {
 Q_OBJECT
 private:
@@ -93,6 +94,15 @@ public:
 
 public slots:
     void confirmer();
+};*/
+class VueNumLocation : public VueIdentifiant
+{
+public:
+    VueNumLocation(Garage &g, QWidget *parent = 0): VueIdentifiant(g, parent)
+    {
+    }
+
+    virtual void maj();
 };
 
 

@@ -104,8 +104,12 @@ public:
         return l.getModele();
     }
 
-    const Location& getLocationActu(){
+    const Location& getLocationActu() const{
         return locationActu;
+    }
+
+    const Vehicule& getVehiculeActu() const{
+        return vehiculeActu;
     }
 
     std::vector<Location> locationsClient(int id){
