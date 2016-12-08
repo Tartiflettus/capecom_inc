@@ -43,6 +43,8 @@ private:
 
     template<typename T>
     void remplirModeles(T iteratorBegin, T iteratorEnd);
+
+    bool vehiculeDisponible(const QDate& d, const Vehicule& v, const QDate& f);
 public:
     VueAjouterLocation(Garage &g, QWidget *parent = 0);
 
@@ -64,14 +66,19 @@ public slots:
 
 template<typename T>
 void VueAjouterLocation::remplirModeles(T iteratorBegin, T iteratorEnd){
+    QDate d(annee[DEBUT]->text().toInt(), mois[DEBUT]->text().toInt(), jour[DEBUT]->text().toInt());
+    QDate f(annee[FIN]->text().toInt(), mois[FIN]->text().toInt(), jour[FIN]->text().toInt());
+
     int i=0;
     for(T it=iteratorBegin; it != iteratorEnd; it++){
-        vehicules.push_back(&(*it));
-        modeles.push_back(new QPushButton(it->modele(), this));
-        layoutModeles->addWidget(modeles.back());
-        QObject::connect(modeles.back(), SIGNAL(clicked()), mapper, SLOT(map()));
-        mapper->setMapping(modeles.back(), i);
-        i++;
+        if(vehiculeDisponible(d, *it, f)){
+            vehicules.push_back(&(*it));
+            modeles.push_back(new QPushButton(it->modele(), this));
+            layoutModeles->addWidget(modeles.back());
+            QObject::connect(modeles.back(), SIGNAL(clicked()), mapper, SLOT(map()));
+            mapper->setMapping(modeles.back(), i);
+            i++;
+        }
     }
 
     QObject::connect(mapper, SIGNAL(mapped(int)), this, SLOT(selectionnerVehicule(int)));
@@ -80,7 +87,7 @@ void VueAjouterLocation::remplirModeles(T iteratorBegin, T iteratorEnd){
 
 
 
-//////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////
 
 
 

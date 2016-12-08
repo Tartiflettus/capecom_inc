@@ -1,9 +1,14 @@
 #ifndef VEHICULE
 #define VEHICULE
-#include <string>
+
 #include <QString>
+#include <list>
 
 //==Classe Abstraite : Vehicule==
+
+
+class Location;
+
 
 class Vehicule {
     
@@ -14,6 +19,7 @@ protected:
 	int nbPlaces;
     QString plaqueImmatriculation;
     QString modeleVehicule;
+    std::list<Location*> locations;
 
 /// @brief constructeur prennant un id, nb_places, plaque et modele
 Vehicule(int places, const QString& imm,
@@ -22,6 +28,8 @@ Vehicule(int places, const QString& imm,
 Vehicule(int places);
 
 public:
+    using iterator=std::list<Location*>::iterator;
+
     Vehicule(){}
     //fonctions de retour des champs Vehicule
     int identifiant() {return id;}
@@ -32,6 +40,9 @@ public:
     bool operator == (const Vehicule& v){
         return v.id == id;
     }
+
+    iterator begin();
+    iterator end();
 
 private:
 
