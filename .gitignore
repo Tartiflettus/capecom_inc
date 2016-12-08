@@ -1,2 +1,4 @@
 #fichier user spécifique à ignorer
 capecom_inc.pro.user
+*.autosave
+
