@@ -124,7 +124,7 @@ void VueAjouterLocation::typeToVelo(){
 
 void VueAjouterLocation::selectionnerVehicule(int index){
     indexSelection = index;
-    std::cout<< "index : "<< indexSelection<< "\n";
+    //std::cout<< "index : "<< indexSelection<< "\n";
 }
 
 
